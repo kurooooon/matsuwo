@@ -2905,7 +2905,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		height: 646px;
+		height: 90vh;
 		/* padding: 9em 0 9em 0 ;_ */
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
@@ -3221,6 +3221,19 @@ input, select, textarea {
 					padding: 0;
 				}
 
+	.youtube-wrapper {
+		display: grid;
+		width: 100%;
+		grid-gap: 8px;
+		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+	}
+
+	.youtubeItem {
+		margin: 0;
+		padding: 0;
+		width: 100%
+	}
+
 /* XLarge */
 
 	@media screen and (max-width: 1680px) {
@@ -3331,13 +3344,13 @@ input, select, textarea {
 
 		/* One */
 
-			#one {
+			#works {
 				text-align: center;
 			}
 
 		/* Two */
 
-			#two {
+			#about {
 				text-align: center;
 			}
 
