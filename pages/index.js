@@ -70,7 +70,7 @@ export default class Index extends React.Component {
           <section id="works" class="main style1">
             <div class="container">
               <header class="major special">
-                <h2>Recents Works</h2>
+                <h2>Recent Works</h2>
               </header>
               <div class="row gtr-150">
               {this.renderYouTube()}
