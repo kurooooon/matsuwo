@@ -47,8 +47,6 @@ export default class Index extends React.Component {
   }
 
   render() {
-    const { items } = this.props;
-    console.log(items)
     return (
       <>
         <Head>
@@ -64,7 +62,7 @@ export default class Index extends React.Component {
           <script src="assets/js/util.js"></script>
           <script src="assets/js/main.js"></script>
         </Head>
-        <>
+        <main>
           <section id="header" />
 
           <section id="works" class="main style1">
@@ -116,7 +114,7 @@ export default class Index extends React.Component {
               <li>&copy; matsuwo</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
           </section>
-        </>
+        </main>
       </>
     );
   }

@@ -2805,9 +2805,11 @@ input, select, textarea {
 			/* background-image: url("images/overlay1.png"), url("../../images/header.jpg"); */
 			background-image: url("../../images/back.jpg");
 			/* background-size: auto,							cover; */
-			background-size: cover;
 			z-index: 0;
 			overflow: hidden;
+			background-color: #000000dd;
+			background-repeat: no-repeat;
+			background-position: top;
 		}
 
 		.main.style2::before {
@@ -2915,10 +2917,11 @@ input, select, textarea {
 		/* background-position: top left,						center center,					center center; */
 		/* background-size: auto,							cover,							cover; */
 		background-position: top;
-		background-size: cover;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		background-color: #000000dd;
+    background-repeat: no-repeat;
 	}
 
 		#header a {
