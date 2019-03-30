@@ -3107,6 +3107,13 @@ input, select, textarea {
 		opacity: 1;
 	}
 
+/* Tweets */
+
+	#tweets {
+		background-attachment: fixed, fixed, fixed;
+		background-image: url("../../images/pic01.jpg");
+	}
+
 /* Footer */
 
 	#footer {
@@ -3290,14 +3297,14 @@ input, select, textarea {
 			}
 
 				.main.style2 {
-					background-attachment: scroll;
+					/* background-attachment: scroll; */
 				}
 
 		/* Header */
 
 			#header {
 				padding: 5em 0 5em 0 ;
-				background-attachment: scroll;
+				/* background-attachment: scroll; */
 			}
 
 				#header br {
@@ -3353,11 +3360,6 @@ input, select, textarea {
 				text-align: center;
 			}
 
-		/* Two */
-
-			#about {
-				text-align: center;
-			}
 
 	}
 
@@ -3460,7 +3462,7 @@ input, select, textarea {
 		/* Main */
 
 			.main {
-				padding: 2em 1.5em 0.1em 1.5em ;
+				padding: 2em 1.5em;
 			}
 
 		/* Header */
