@@ -4,6 +4,17 @@ import fetch from 'isomorphic-unfetch';
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
 
+const YoutubeWrapper = styled.div`
+  display: grid;
+  width: 100%;
+  grid-gap: 8px;
+  grid-template-columns: 1fr;
+  
+  @media screen and (min-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+`;
+
 const YouTubeLink = styled.a`
   text-align: right;
   display: block;
@@ -35,14 +46,14 @@ export default class Index extends React.Component {
       return null;
     }
     return (
-      <div className="youtube-wrapper">
+      <YoutubeWrapper>
       {items.map(item => (
         <YouTube
           videoId={item.id.videoId}
           className="youtubeItem"
         />
       ))}
-      </div>
+      </YoutubeWrapper>
     );
   }
 
@@ -70,7 +81,7 @@ export default class Index extends React.Component {
               <header class="major special">
                 <h2>Recent Works</h2>
               </header>
-              <div class="row gtr-150">
+              <div class="gtr-150">
               {this.renderYouTube()}
               </div>
               <YouTubeLink href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw" target="_blank">...more</YouTubeLink>

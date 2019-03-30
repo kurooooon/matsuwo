@@ -2810,6 +2810,7 @@ input, select, textarea {
 			background-color: #000000dd;
 			background-repeat: no-repeat;
 			background-position: top;
+			background-size: cover;
 		}
 
 		.main.style2::before {
@@ -2921,7 +2922,8 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 		background-color: #000000dd;
-    background-repeat: no-repeat;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 		#header a {
