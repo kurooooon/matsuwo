@@ -2801,7 +2801,7 @@ input, select, textarea {
 			position: relative;
 			background-color: #333;
 			color: rgba(255, 255, 255, 0.75);
-			background-attachment: fixed,							fixed;
+			background-attachment: fixed, fixed;
 			/* background-image: url("images/overlay1.png"), url("../../images/header.jpg"); */
 			background-image: url("../../images/back.jpg");
 			/* background-size: auto,							cover; */
@@ -2909,7 +2909,7 @@ input, select, textarea {
 		/* padding: 9em 0 9em 0 ;_ */
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
-		background-attachment: fixed,							fixed,							fixed;
+		background-attachment: fixed,	fixed, fixed;
 		/* background-image: url("images/overlay2.png"), url("images/overlay3.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2); */
 		background-image: url("../../images/header.jpg"); 
 		/* background-position: top left,						center center,					center center; */
@@ -3108,7 +3108,7 @@ input, select, textarea {
 		padding: 6em 0 6em 0 ;
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
-		background-attachment: fixed,							fixed,							fixed;
+		background-attachment: fixed,	fixed, fixed;
 		/* background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%); */
 		background-position: top left,						center center,					center center;
 		background-size: auto,							cover,							cover;
@@ -3408,22 +3408,33 @@ input, select, textarea {
 				padding: 3em 1.5em 1em 1.5em ;
 			}
 
-		/* Header */
+			/* Header */
 
 			#header {
 				padding: 4em 3em 4em 3em ;
 			}
 
-				#header .actions {
-					margin: 2em 0 0 0;
-				}
+			/* TODO 暫定対応 */
+			/* safari */
+			_::-webkit-full-page-media, _:future, :root #header {
+					background-attachment: scroll;
+			}
 
-		/* Footer */
+			#header .actions {
+				margin: 2em 0 0 0;
+			}
+
+			/* Footer */
 
 			#footer {
 				padding: 3em 1.5em 3em 1.5em ;
 			}
 
+			/* TODO 暫定対応 */
+			/* safari */
+			_::-webkit-full-page-media, _:future, :root #footer {
+				background-attachment: scroll;
+			}
 	}
 
 /* XSmall */
@@ -3496,14 +3507,14 @@ input, select, textarea {
 
 		/* Header */
 
-			#header {
+			/* #header {
 				padding: 3em 1em 3em 1em ;
-			}
+			} */
 
 		/* Footer */
 
-			#footer {
+			/* #footer {
 				padding: 2em 1em 2em 1em ;
-			}
+			} */
 
 	}

@@ -63,10 +63,11 @@ const NewsItem = styled.li`
 export default class Index extends React.Component {
 
   static async getInitialProps({ req }) {
+    const {env} = process;
 
-    const youtubeObj = await fetch('');
+    const youtubeObj = await fetch(`https://www.googleapis.com/youtube/v3/search?part=id&key=${env.YOUTUBE_API_KEY}&channelId=UCRSPD9OHzBjDfY9EFE4hDHw&maxResults=4&order=date&pageToken=`);
 
-    const newsObj =  await fetch('');
+    const newsObj =  await fetch(`https://script.google.com/macros/s/${env.NEWS_SHEET_KEY}/exec`);
     
     const youtubeData = await youtubeObj.json();
     const newsData = await newsObj.json();
