@@ -79,6 +79,9 @@ export default class Index extends React.Component {
 
   renderNews() {
     const { news } = this.props;
+    if (!news) {
+      return;
+    }
     const items = news.map(item => {
       const date = format(new Date(item.date), 'yyyy MM/dd(EEEEE)', {locale: ja});
       return (
