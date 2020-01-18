@@ -5,6 +5,11 @@ import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import { format } from 'date-fns'
 import ja from 'date-fns/locale/ja'
+import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
+import { Image } from 'cloudinary-react';
+
+import '../static/assets/css/main.css';
 
 const Header = styled.section`
   height: 90vh;
@@ -137,8 +142,7 @@ export default class Index extends React.Component {
           <title>matsuwo</title>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-          <link rel="stylesheet" href="/static/assets/css/main.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap" />
           <noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
           <script src="assets/js/jquery.min.js"></script>
           <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -184,12 +188,9 @@ export default class Index extends React.Component {
                 <div className="row gtr-150">
                   <div className="col-6 col-12-medium">
                     <ProfileImageWrapper>
-                      <img
-                        width="100%"
+                      <Image cloudName="kurooooon" publicId="matsuwo/profile_wkgtbv" width="100%"
                         height="100%"
-                        src="/static/images/profile.jpg"
-                        alt="matsuwo"
-                      />
+                        alt="matsuwo" />
                     </ProfileImageWrapper>
                   </div>
                   <div className="col-6 col-12-medium">
@@ -209,11 +210,11 @@ export default class Index extends React.Component {
 
           <section id="footer">
             <ul className="icons">
-              <li><a href="https://twitter.com/Ryumatsuo91" className="icon alt fa-twitter"><span className="label">Twitter</span></a></li>
-              <li><a href="https://www.facebook.com/ryuhei.matsuo.50" className="icon alt fa-facebook"><span className="label">Facebook</span></a></li>
-              <li><a href="https://www.instagram.com/ryuhei_matsuo/" className="icon alt fa-instagram"><span className="label">Instagram</span></a></li>
+              <li><a href="https://twitter.com/Ryumatsuo91" className="icon alt"><FaTwitter alt="twitter" /></a></li>
+              <li><a href="https://www.facebook.com/ryuhei.matsuo.50" className="icon alt"><FaFacebook alt="Facebook" /></a></li>
+              <li><a href="https://www.instagram.com/ryuhei_matsuo/" className="icon alt"><FaInstagram alt="instagram" /></a></li>
               <li><a href="mailto:matsuwo611@gmail.com
-" className="icon alt fa-envelope"><span className="label">Email</span></a></li>
+" className="icon alt"><FiMail alt="mail" /></a></li>
             </ul>
             <ul className="copyright">
               <li>&copy; matsuwo</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
