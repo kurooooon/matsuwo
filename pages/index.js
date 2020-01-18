@@ -188,7 +188,10 @@ export default class Index extends React.Component {
                 <div className="row gtr-150">
                   <div className="col-6 col-12-medium">
                     <ProfileImageWrapper>
-                      <Image cloudName="kurooooon" publicId="matsuwo/profile_wkgtbv" width="100%"
+                      <Image
+                        cloudName="kurooooon"
+                        publicId="matsuwo/profile_wkgtbv"
+                        width="100%"
                         height="100%"
                         alt="matsuwo" />
                     </ProfileImageWrapper>
