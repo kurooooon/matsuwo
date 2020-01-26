@@ -80,6 +80,19 @@ const NewsItem = styled.li`
   list-style: none;
 `;
 
+const injectGA = () => {
+  if (typeof window == "undefined") {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", process.env.GA_ID);
+};
+
 export default class Index extends React.Component {
   static async getInitialProps({ req }) {
     const { env } = process;
@@ -153,6 +166,12 @@ export default class Index extends React.Component {
     return (
       <>
         <Head>
+          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
+          ></script>
+          <script>{injectGA()}</script>
           <title>matsuwo</title>
           <meta charset="utf-8" />
           <meta
