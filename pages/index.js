@@ -5,6 +5,11 @@ import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import { format } from 'date-fns'
 import ja from 'date-fns/locale/ja'
+import { FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FiMail } from 'react-icons/fi';
+import { Image } from 'cloudinary-react';
+
+import '../static/assets/css/main.css';
 
 const Header = styled.section`
   height: 90vh;
@@ -22,6 +27,19 @@ const Header = styled.section`
 
   @media (max-width: 374px) {
     background-position: top right -210px;
+  }
+`;
+
+const HeadTitle = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: 'Roboto Slab', serif;
+  font-size: 60px;
+
+  @media screen and (min-width: 480px) {
+    font-size: 150px;
   }
 `;
 
@@ -65,15 +83,14 @@ export default class Index extends React.Component {
   static async getInitialProps({ req }) {
     const {env} = process;
 
-    const youtubeObj = await fetch(`https://www.googleapis.com/youtube/v3/search?part=id&key=${env.YOUTUBE_API_KEY}&channelId=UCRSPD9OHzBjDfY9EFE4hDHw&maxResults=4&order=date&pageToken=`);
+    const youtubeObj =  await fetch(`https://script.google.com/macros/s/${env.MUSIC_SHEET_KEY}/exec`);
+    const youtubeList = await youtubeObj.json();
 
     const newsObj =  await fetch(`https://script.google.com/macros/s/${env.NEWS_SHEET_KEY}/exec`);
-    
-    const youtubeData = await youtubeObj.json();
     const newsData = await newsObj.json();
       
     return {
-      items: youtubeData.items,
+      musicList: youtubeList,
       news: newsData
     };
   }
@@ -84,6 +101,9 @@ export default class Index extends React.Component {
       return;
     }
     const items = news.map(item => {
+      if (!item.description) {
+        return null;
+      }
       const date = format(new Date(item.date), 'yyyy MM/dd(EEEEE)', {locale: ja});
       return (
         <NewsItem key={item.id}>
@@ -98,17 +118,16 @@ export default class Index extends React.Component {
   }
 
   renderYouTube() {
-    const { items } = this.props;
-    console.log(items);
-    if (!items) {
+    const { musicList } = this.props;
+    if (!musicList) {
       return null;
     }
     return (
       <YoutubeWrapper>
-      {items.map(item => (
+      {musicList.map(id => (
         <YouTube
-          key={item.id.videoId}
-          videoId={item.id.videoId}
+          key={id}
+          videoId={id}
           className="youtubeItem"
         />
       ))}
@@ -123,7 +142,7 @@ export default class Index extends React.Component {
           <title>matsuwo</title>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-          <link rel="stylesheet" href="/static/assets/css/main.css" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap" />
           <noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
           <script src="assets/js/jquery.min.js"></script>
           <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -133,7 +152,9 @@ export default class Index extends React.Component {
           <script src="assets/js/main.js"></script>
         </Head>
         <main>
-          <section id="header" />
+          <section id="header">
+            <HeadTitle>matsuwo</HeadTitle>
+          </section>
 
           <section id="new" className="main style1">
             <div className="container">
@@ -167,12 +188,12 @@ export default class Index extends React.Component {
                 <div className="row gtr-150">
                   <div className="col-6 col-12-medium">
                     <ProfileImageWrapper>
-                      <img
+                      <Image
+                        cloudName="kurooooon"
+                        publicId="matsuwo/profile_wkgtbv"
                         width="100%"
                         height="100%"
-                        src="/static/images/profile.jpg"
-                        alt="matsuwo"
-                      />
+                        alt="matsuwo" />
                     </ProfileImageWrapper>
                   </div>
                   <div className="col-6 col-12-medium">
@@ -192,15 +213,12 @@ export default class Index extends React.Component {
 
           <section id="footer">
             <ul className="icons">
-              <li><a href="https://twitter.com/Ryumatsuo91" className="icon alt fa-twitter"><span className="label">Twitter</span></a></li>
-              <li><a href="https://www.facebook.com/ryuhei.matsuo.50" className="icon alt fa-facebook"><span className="label">Facebook</span></a></li>
-              <li><a href="https://www.instagram.com/ryuhei_matsuo/" className="icon alt fa-instagram"><span className="label">Instagram</span></a></li>
+              <li><a href="https://twitter.com/Ryumatsuo91" className="icon alt"><FaTwitter alt="twitter" /></a></li>
+              <li><a href="https://www.facebook.com/ryuhei.matsuo.50" className="icon alt"><FaFacebook alt="Facebook" /></a></li>
+              <li><a href="https://www.instagram.com/ryuhei_matsuo/" className="icon alt"><FaInstagram alt="instagram" /></a></li>
               <li><a href="mailto:matsuwo611@gmail.com
-" className="icon alt fa-envelope"><span className="label">Email</span></a></li>
+" className="icon alt"><FiMail alt="mail" /></a></li>
             </ul>
-            {/* <p>
-              <a className="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/Ryumatsuo91?ref_src=twsrc%5Etfw">Tweets by Ryumatsuo91</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-            </p> */}
             <ul className="copyright">
               <li>&copy; matsuwo</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>

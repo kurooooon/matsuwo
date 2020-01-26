@@ -10,7 +10,7 @@ app.prepare().then(() => {
   const server = express();
 
   server.get('*', (req, res) => {
-    return handle(req, res);
+    return handle(req, res).catch(e => console.error("server error: ", e));
   });
 
   server.listen(port, err => {
