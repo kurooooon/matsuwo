@@ -8,6 +8,8 @@ import ja from "date-fns/locale/ja";
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Image } from "cloudinary-react";
+import ReactGA from "react-ga";
+ReactGA.initialize(process.env.GA_ID);
 
 import "../static/assets/css/main.css";
 
@@ -96,6 +98,12 @@ export default class Index extends React.Component {
       musicList: youtubeList,
       news: newsData
     };
+  }
+
+  componentDidMount() {
+    const { pathname } = this.props.url;
+    ReactGA.set({ page: pathname });
+    ReactGA.pageview(pathname);
   }
 
   renderNews() {
