@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000px" height="1000px" viewBox="0 0 1000 1000" zoomAndPan="disable">
-    <style type="text/css"><![CDATA[
+    <style type="text/css">
+		<![CDATA[
 		.p-4 { fill: rgba(255,255,255,0.16); }
 		.p-3 { fill: rgba(255,255,255,0.12); }
 		.p-2 { fill: rgba(255,255,255,0.08); }
