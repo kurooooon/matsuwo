@@ -230,6 +230,7 @@ export default class Index extends React.Component {
                         width="100%"
                         height="100%"
                         alt="matsuwo"
+                        secure={true}
                       />
                     </ProfileImageWrapper>
                   </div>
