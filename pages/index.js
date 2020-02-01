@@ -147,7 +147,7 @@ export default class Index extends React.Component {
           <meta property="og:title" content="matsuwo officail site | music &amp; art artist" />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://matsuwo.netlify.com" />
-          <meta property="og:image" content="https://matsuwo.netlify.com/static/profile.jpg" />
+          <meta property="og:image" content="https://matsuwo.netlify.com/static/images/profile.jpg" />
           <meta property="og:site_name" content="matsuwo officail site | music &amp; art artist" />
           <meta property="og:description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
           {/* <meta name="twitter:card" content="summary" />
