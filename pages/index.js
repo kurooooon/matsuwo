@@ -88,7 +88,7 @@ const injectGA = () => {
   }
   gtag("js", new Date());
 
-  gtag("config", process.env.GA_ID);
+  gtag("config", GA_ID);
 };
 
 export default class Index extends React.Component {
