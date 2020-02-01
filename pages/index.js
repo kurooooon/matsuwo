@@ -11,25 +11,6 @@ import { Image } from "cloudinary-react";
 
 import "../static/assets/css/main.css";
 
-const Header = styled.section`
-  height: 90vh;
-  background-color: #4686a0;
-  color: rgba(255, 255, 255, 0.75);
-  background-attachment: fixed, fixed, fixed;
-  background-image: url("../../images/header.jpg");
-  background-position: top;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  background-color: #000000dd;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  @media (max-width: 374px) {
-    background-position: top right -210px;
-  }
-`;
-
 const HeadTitle = styled.h1`
   position: absolute;
   top: 50%;
@@ -158,14 +139,17 @@ export default class Index extends React.Component {
     return (
       <>
         <Head>
+          <title>matsuwo officail site | music &amp; art artist</title>
+          <meta name="description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
+          <meta name="keywords" content="音楽,アート,油絵,アコースティック,個展" />
+          <link rel="canonical" href="https://matsuwo.netlify.com/" />
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
           ></script>
           <script>{injectGA()}</script>
-          <title>matsuwo</title>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, user-scalable=no"
@@ -274,7 +258,7 @@ export default class Index extends React.Component {
             <ul className="icons">
               <li>
                 <a href="https://twitter.com/Ryumatsuo91" className="icon alt">
-                  <FaTwitter alt="twitter" />
+                  <FaTwitter alt="twitter: matsuwo" />
                 </a>
               </li>
               <li>
@@ -282,7 +266,7 @@ export default class Index extends React.Component {
                   href="https://www.facebook.com/ryuhei.matsuo.50"
                   className="icon alt"
                 >
-                  <FaFacebook alt="Facebook" />
+                  <FaFacebook alt="Facebook: matsuwo" />
                 </a>
               </li>
               <li>
@@ -290,7 +274,7 @@ export default class Index extends React.Component {
                   href="https://www.instagram.com/ryuhei_matsuo/"
                   className="icon alt"
                 >
-                  <FaInstagram alt="instagram" />
+                  <FaInstagram alt="instagram: matsuwo" />
                 </a>
               </li>
               <li>
@@ -299,7 +283,7 @@ export default class Index extends React.Component {
 "
                   className="icon alt"
                 >
-                  <FiMail alt="mail" />
+                  <FiMail alt="mail: matsuwo" />
                 </a>
               </li>
             </ul>
