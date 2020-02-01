@@ -140,6 +140,7 @@ export default class Index extends React.Component {
       <>
         <Head>
           <title>matsuwo officail site | music &amp; art artist</title>
+          <meta name="google-site-verification" content={GSC_VARIFICATION} />
           <meta name="description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
           <meta name="keywords" content="音楽,アート,油絵,アコースティック,個展" />
           <link rel="canonical" href="https://matsuwo.netlify.com/" />

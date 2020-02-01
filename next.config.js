@@ -22,6 +22,7 @@ module.exports = withCSS({
    config.plugins.push(
      new webpack.DefinePlugin({
        'GA_ID': JSON.stringify(process.env.GA_ID),
+       'GSC_VARIFICATION': JSON.stringify(process.env.GSC_VARIFICATION),
       })
     );
     return config;
