@@ -138,12 +138,20 @@ export default class Index extends React.Component {
   render() {
     return (
       <>
-        <Head>
+        <Head prefix="og: http://ogp.me/ns#">
           <title>matsuwo officail site | music &amp; art artist</title>
           <meta name="google-site-verification" content={GSC_VARIFICATION} />
           <meta name="description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
           <meta name="keywords" content="音楽,アート,油絵,アコースティック,個展" />
-          <link rel="canonical" href="https://matsuwo.netlify.com/" />
+          <link rel="canonical" href="https://matsuwo.netlify.com" />
+          <meta property="og:title" content="matsuwo officail site | music &amp; art artist" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://matsuwo.netlify.com" />
+          <meta property="og:image" content="https://matsuwo.netlify.com/static/profile.jpg" />
+          <meta property="og:site_name" content="matsuwo officail site | music &amp; art artist" />
+          <meta property="og:description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
+          {/* <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="" /> */}
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <script
             async
