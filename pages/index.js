@@ -2,14 +2,46 @@ import React from "react";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
 import YouTube from "react-youtube";
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Image } from "cloudinary-react";
 
-import "../static/assets/css/main.css";
+const SectionCss = css`
+  padding: 6rem 0 4rem 0;
+
+  @media (max-width: 1140px) {
+    padding: 4rem 0 2rem 0;
+  }
+  @media (max-width: 980px) {
+    padding: 5rem 3rem 3rem 3rem;
+  }
+  @media (max-width: 736px) {
+    padding: 3rem 1.5rem 1rem 1.5rem;
+  }
+  @media (max-width: 480px) {
+    padding: 2rem 1.5rem;
+  }
+`;
+
+const Header = styled.section`
+  padding: 4rem 2rem 4rem 2rem;
+  height: 90vh;
+  background-color: #4686a0;
+  color: rgba(255, 255, 255, 0.75);
+  background-attachment: fixed,	fixed, fixed;
+  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg"); 
+  background-position: top;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  background-color: #000000dd;
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
 
 const HeadTitle = styled.h1`
   position: absolute;
@@ -18,9 +50,50 @@ const HeadTitle = styled.h1`
   transform: translateX(-50%) translateY(-50%);
   font-family: "Roboto Slab", serif;
   font-size: 60px;
+  margin: 0;
+  color: #fff;
+  word-break: keep-all;
 
   @media screen and (min-width: 480px) {
     font-size: 150px;
+  }
+`;
+
+const SectionHeader = styled.header`
+  text-align: center;
+  margin: 0 0 1rem 0;
+
+  h2 {
+    margin: 0;
+    font: inherit;
+    color: ${props => props.inverse
+      ? "#fff"
+      : "#555"};
+    line-height: 1.35rem;
+    font-size: 1.4rem;
+    font-weight: 200;
+
+    @media (min-width: 480px) {
+      font-size: 2rem;
+      line-height: 2.9rem;
+    }
+
+    @media (min-width: 1140px) {
+      font-size: 2.2rem;
+      line-height: 3.15rem;
+    }
+  }
+
+  :after {
+    background: ${props => props.inverse
+      ? "#ffffff"
+      : "#90909080"
+    };
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin-top: 1.5rem;
+    width: 6rem;
   }
 `;
 
@@ -43,34 +116,383 @@ const YouTubeLink = styled.a`
 
 const ProfileImageWrapper = styled.div`
   display: flex;
-  margin-bottom: 2em;
-`;
-
-const AboutWrapper = styled.div`
-  background-color: #00000099;
-  padding: 20px;
+  margin-bottom: 2rem;
 `;
 
 const NewsWrapper = styled.ul`
   margin: 0;
+  padding-left: 1rem;
 `;
 
 const NewsItem = styled.li`
   list-style: none;
+  padding-left: 0.5rem;
+
+  p {
+    margin: 0 0 2rem 0;
+    font-size: 1rem;
+
+    @media (min-width: 480px) {
+      font-size: 1.1rem;
+    }
+
+    @media (min-width: 1140px) {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
-const injectGA = () => {
-  if (typeof window == "undefined") {
-    return;
-  }
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+const AboutWrapper = styled.section`
+  ${SectionCss}
+  position: relative;
+  background-color: #333;
+  color: rgba(255, 255, 255, 0.75);
+  background-attachment: fixed,	fixed;
+  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/back_wqixtg.jpg");
+  z-index: 0;
+  overflow: hidden;
+  background-color: #000000dd;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
 
-  gtag("config", GA_ID);
-};
+  ::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background: inherit;
+    filter: blur(10px);
+    z-index: -1;
+  }
+
+  a {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5, h6, strong, b {
+    color: #ffffff;
+  }
+
+  header p {
+    color: #ffffff;
+  }
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button,
+  .button {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #ffffff !important;
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="button"]:hover,
+  button:hover,
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.125);
+  }
+
+  input[type="submit"]:active,
+  input[type="reset"]:active,
+  input[type="button"]:active,
+  button:active,
+  .button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  input[type="submit"].primary,
+  input[type="reset"].primary,
+  input[type="button"].primary,
+  button.primary,
+  .button.primary {
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff !important;
+    color: #333 !important;
+  }
+
+  input[type="submit"].primary:hover,
+  input[type="reset"].primary:hover,
+  input[type="button"].primary:hover,
+  button.primary:hover,
+  .button.primary:hover {
+    background-color: rgba(255, 255, 255, 0.125) !important;
+    color: #ffffff !important;
+  }
+
+  input[type="submit"].primary:active,
+  input[type="reset"].primary:active,
+  input[type="button"].primary:active,
+  button.primary:active,
+  .button.primary:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  ul.major-icons li .icon {
+    border-color: #ffffff;
+  }
+
+  .icon.major {
+    color: #ffffff;
+  }
+`;
+
+const AboutContainer = styled.div`
+  @media (min-width: 1140px) {
+    margin: 0 auto;
+    max-width: calc(100% - 4em);
+    width: 60em;
+  }
+`;
+
+const AboutInnerWrapper = styled.div`
+  background-color: #00000099;
+  padding: 20px;
+`;
+
+const FooterSection = styled.section`
+  ${SectionCss}
+
+  @media (min-width: 480px) {
+    padding: 5rem 3rem 5rem 3rem;
+  }
+
+  @media (min-width: 1140px) {
+    padding: 6em 0 6em 0;
+  }
+
+  background-color: #4686a0;
+  color: rgba(255, 255, 255, 0.75);
+  background-attachment: fixed, fixed, fixed;
+  background-position: top left, center center, center center;
+  background-size: auto, cover, cover;
+  text-align: center;
+  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay2_xpyeat.png"), url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay4_fyhlai.svg"), linear-gradient(45deg, #614d20, #333 95%);
+
+  a {
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+  }
+
+    a:hover {
+      color: #ffffff;
+    }
+
+  h1, h2, h3, h4, h5, h6, strong, b {
+    color: #ffffff;
+  }
+
+  header p {
+    color: #ffffff;
+  }
+
+  header.major:after {
+    background: #ffffff;
+  }
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button,
+  .button {
+    box-shadow: inset 0 0 0 1px #ffffff;
+    color: #ffffff !important;
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  input[type="button"]:hover,
+  button:hover,
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.125);
+  }
+
+  input[type="submit"]:active,
+  input[type="reset"]:active,
+  input[type="button"]:active,
+  button:active,
+  .button:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  input[type="submit"].primary,
+  input[type="reset"].primary,
+  input[type="button"].primary,
+  button.primary,
+  .button.primary {
+    background-color: #ffffff;
+    box-shadow: inset 0 0 0 1px #ffffff !important;
+    color: #4686a0 !important;
+  }
+
+  input[type="submit"].primary:hover,
+  input[type="reset"].primary:hover,
+  input[type="button"].primary:hover,
+  button.primary:hover,
+  .button.primary:hover {
+    background-color: rgba(255, 255, 255, 0.125) !important;
+    color: #ffffff !important;
+  }
+
+  input[type="submit"].primary:active,
+  input[type="reset"].primary:active,
+  input[type="button"].primary:active,
+  button.primary:active,
+  .button.primary:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  ul.major-icons li .icon {
+    border-color: #ffffff;
+  }
+
+  .icon.major {
+    color: #ffffff;
+  }
+
+  .icons {
+    margin: 0;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    list-style: none;
+    margin: 2rem 0 0 0;
+    padding: 0;
+  }
+
+  .copyright li {
+    border-left: solid 1px;
+    display: inline-block;
+    line-height: 1rem;
+    margin-left: 1rem;
+    padding: 0 0 0 1rem;
+  }
+
+  .copyright li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding: 0;
+  }
+`;
+
+const NewSection = styled.section`
+  ${SectionCss};
+`;
+
+const NewContainer = styled.section`
+  @media (min-width: 1140px) {
+    margin: 0 auto;
+    max-width: calc(100% - 4em);
+    width: 60em;
+  }
+`;
+
+const WorksSection = styled.section`
+  ${SectionCss};
+
+  @media (min-width: 1140px) {
+    max-width: calc(100% - 4em);
+    margin: auto;
+    width: 60em;
+  }
+`;
+
+const AboutDescription = styled.div`
+  font-size: 1rem;
+
+  @media (min-width: 480px) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1140px) {
+    width: 50%;
+    padding-left: 3rem;
+  }
+`;
+
+const FooterLink = styled.a`
+  font-size: 1rem;
+  border-bottom: none;
+
+  @media (min-width: 480px) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1140px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const CopyRight = styled.ul`
+  li {
+    font-size: 0.8rem;
+    border: 0;
+    display: block;
+    padding: 0;
+    line-height: 1rem;
+
+    @media (min-width: 480px) {
+      display: inline-block;
+    }
+
+    :last-child {
+      margin: 0.8rem 0 0 0;
+
+      @media (min-width: 480px) {
+        border-left: solid 1px;
+        margin-left: 1em;
+        padding: 0 0 0 1em;
+      }
+    }
+  }
+`;
+
+const FooterList = styled.ul`
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+
+  @media (min-width: 480px) {
+    margin-bottom: 2rem;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 1.25rem 0 0;
+  }
+
+  li:last-child {
+    padding-right: 0;
+  }
+
+  li .icon:before {
+    font-size: 1.5rem;
+  }
+`;
+
+const Row = styled.div`
+  @media (min-width: 1140px) {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+`;
+
+const Col = styled.div`
+  @media (min-width: 1140px) {
+    width: 50%;
+  }
+`;
 
 export default class Index extends React.Component {
   static async getInitialProps({ req }) {
@@ -129,7 +551,7 @@ export default class Index extends React.Component {
     return (
       <YoutubeWrapper>
         {musicList.map(id => (
-          <YouTube key={id} videoId={id} className="youtubeItem" />
+          <YouTube opts={{width: '100%'}} key={id} videoId={id} className="youtubeItem" />
         ))}
       </YoutubeWrapper>
     );
@@ -138,65 +560,29 @@ export default class Index extends React.Component {
   render() {
     return (
       <>
-        <Head prefix="og: http://ogp.me/ns#">
-          <title>matsuwo officail site | music &amp; art artist</title>
-          <meta name="google-site-verification" content={GSC_VARIFICATION} />
-          <meta name="description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
-          <meta name="keywords" content="音楽,アート,油絵,アコースティック,個展" />
-          <link rel="canonical" href="https://matsuwo.netlify.com" />
-          <meta property="og:title" content="matsuwo officail site | music &amp; art artist" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://matsuwo.netlify.com" />
-          <meta property="og:image" content="https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg" />
-          <meta property="og:site_name" content="matsuwo officail site | music &amp; art artist" />
-          <meta property="og:description" content="matsuwo / 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
-          {/* <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="" /> */}
-          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
-          ></script>
-          <script>{injectGA()}</script>
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap"
-          />
-          <noscript>
-            <link rel="stylesheet" href="/static/assets/css/noscript.css" />
-          </noscript>
-          <script src="assets/js/jquery.min.js"></script>
-          <script src="assets/js/jquery.scrolly.min.js"></script>
-          <script src="assets/js/browser.min.js"></script>
-          <script src="assets/js/breakpoints.min.js"></script>
-          <script src="assets/js/util.js"></script>
-          <script src="assets/js/main.js"></script>
+        <Head>
+          <title>matsuwo / 松尾竜平 officail site | music &amp; art artist</title>
         </Head>
         <main>
-          <section id="header">
+          <Header id="header">
             <HeadTitle>matsuwo</HeadTitle>
-          </section>
+          </Header>
 
-          <section id="new" className="main style1">
-            <div className="container">
-              <header className="major special">
+          <NewSection className="main style1">
+            <NewContainer>
+              <SectionHeader>
                 <h2>What's New</h2>
-              </header>
+              </SectionHeader>
               {this.renderNews()}
-            </div>
-          </section>
+            </NewContainer>
+          </NewSection>
 
-          <section id="works" className="main style1">
+          <WorksSection className="main style1">
             <div className="container">
-              <header className="major special">
+              <SectionHeader>
                 <h2>Recent Works</h2>
-              </header>
-              <div className="gtr-150">{this.renderYouTube()}</div>
+              </SectionHeader>
+              {this.renderYouTube()}
               <p>
                 <YouTubeLink
                   href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
@@ -206,28 +592,29 @@ export default class Index extends React.Component {
                 </YouTubeLink>
               </p>
             </div>
-          </section>
+          </WorksSection>
 
-          <section id="about" className="main style2">
-            <div className="container">
-              <AboutWrapper>
-                <header className="major special">
+          <AboutWrapper id="about" className="main">
+            <AboutContainer>
+              <AboutInnerWrapper>
+                <SectionHeader inverse>
                   <h2>About</h2>
-                </header>
-                <div className="row gtr-150">
-                  <div className="col-6 col-12-medium">
+                </SectionHeader>
+                <Row className="gtr-150">
+                  <Col className="col-12-medium">
                     <ProfileImageWrapper>
                       <Image
                         cloudName="kurooooon"
                         publicId="matsuwo/profile_wkgtbv"
                         width="100%"
                         height="100%"
-                        alt="matsuwo"
+                        alt=""
                         secure={true}
                       />
                     </ProfileImageWrapper>
-                  </div>
-                  <div className="col-6 col-12-medium">
+                  </Col>
+                  <AboutDescription>
+                    <p>matsuwo / 松尾竜平</p> 
                     <p>
                       北海道札幌での
                       <a
@@ -257,52 +644,52 @@ export default class Index extends React.Component {
                     <p>
                       アートでは油絵を制作してイタリア、フランス、ニューヨークの展覧会やアートインレジデンスを経験後、音楽ジャケットやチラシのアートワークを担当したりアートフェアや個展などで絵画を発表している。
                     </p>
-                  </div>
-                </div>
-              </AboutWrapper>
-            </div>
-          </section>
+                  </AboutDescription>
+                </Row>
+              </AboutInnerWrapper>
+            </AboutContainer>
+          </AboutWrapper>
 
-          <section id="footer">
-            <ul className="icons">
+          <FooterSection>
+            <FooterList>
               <li>
-                <a href="https://twitter.com/Ryumatsuo91" className="icon alt">
+                <FooterLink href="https://twitter.com/Ryumatsuo91" className="icon alt">
                   <FaTwitter alt="twitter: matsuwo" />
-                </a>
+                </FooterLink>
               </li>
               <li>
-                <a
+                <FooterLink
                   href="https://www.facebook.com/ryuhei.matsuo.50"
                   className="icon alt"
                 >
                   <FaFacebook alt="Facebook: matsuwo" />
-                </a>
+                </FooterLink>
               </li>
               <li>
-                <a
+                <FooterLink
                   href="https://www.instagram.com/ryuhei_matsuo/"
                   className="icon alt"
                 >
                   <FaInstagram alt="instagram: matsuwo" />
-                </a>
+                </FooterLink>
               </li>
               <li>
-                <a
+                <FooterLink
                   href="mailto:matsuwo611@gmail.com
 "
                   className="icon alt"
                 >
                   <FiMail alt="mail: matsuwo" />
-                </a>
+                </FooterLink>
               </li>
-            </ul>
-            <ul className="copyright">
-              <li>&copy; matsuwo</li>
+            </FooterList>
+            <CopyRight>
+              <li>&copy; matsuwo / 松尾竜平</li>
               <li>
                 Design: <a href="https://html5up.net/">HTML5 UP</a>
               </li>
-            </ul>
-          </section>
+            </CopyRight>
+          </FooterSection>
         </main>
       </>
     );
