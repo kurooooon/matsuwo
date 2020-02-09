@@ -41,6 +41,10 @@ const Header = styled.section`
   background-color: #000000dd;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 1140px) and (-webkit-min-device-pixel-ratio: 0) {
+    background-attachment: scroll;
+  }
 `;
 
 const HeadTitle = styled.h1`
@@ -155,6 +159,10 @@ const AboutWrapper = styled.section`
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+
+  @media (max-width: 1140px) and (-webkit-min-device-pixel-ratio: 0) {
+    background-attachment: scroll;
+  }
 
   ::before {
     content: '';
