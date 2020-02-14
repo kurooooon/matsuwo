@@ -572,11 +572,11 @@ export default class Index extends React.Component {
           <title>matsuwo / 松尾竜平 officail site | music &amp; art artist</title>
         </Head>
         <main>
-          <Header id="header">
+          <Header>
             <HeadTitle>matsuwo</HeadTitle>
           </Header>
 
-          <NewSection className="main style1">
+          <NewSection>
             <NewContainer>
               <SectionHeader>
                 <h2>What's New</h2>
@@ -585,8 +585,8 @@ export default class Index extends React.Component {
             </NewContainer>
           </NewSection>
 
-          <WorksSection className="main style1">
-            <div className="container">
+          <WorksSection>
+            <div>
               <SectionHeader>
                 <h2>Recent Works</h2>
               </SectionHeader>
@@ -602,14 +602,14 @@ export default class Index extends React.Component {
             </div>
           </WorksSection>
 
-          <AboutWrapper id="about" className="main">
+          <AboutWrapper>
             <AboutContainer>
               <AboutInnerWrapper>
                 <SectionHeader inverse>
                   <h2>About</h2>
                 </SectionHeader>
-                <Row className="gtr-150">
-                  <Col className="col-12-medium">
+                <Row>
+                  <Col>
                     <ProfileImageWrapper>
                       <Image
                         cloudName="kurooooon"
@@ -661,14 +661,8 @@ export default class Index extends React.Component {
           <FooterSection>
             <FooterList>
               <li>
-                <FooterLink href="https://twitter.com/Ryumatsuo91" className="icon alt">
-                  <FaTwitter alt="twitter: matsuwo" />
-                </FooterLink>
-              </li>
-              <li>
                 <FooterLink
                   href="https://www.facebook.com/ryuhei.matsuo.50"
-                  className="icon alt"
                 >
                   <FaFacebook alt="Facebook: matsuwo" />
                 </FooterLink>
