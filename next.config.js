@@ -19,6 +19,10 @@ module.exports = withCSS({
     MUSIC_SHEET_KEY: process.env.MUSIC_SHEET_KEY
   },
   webpack(config) {
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  });
    config.plugins.push(
      new webpack.DefinePlugin({
        'GA_ID': JSON.stringify(process.env.GA_ID),

@@ -6,9 +6,11 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
-import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Image } from "cloudinary-react";
+
+import TickTok from '../static/images/tiktok.svg'
 
 const SectionCss = css`
   padding: 6rem 0 4rem 0;
@@ -662,26 +664,30 @@ export default class Index extends React.Component {
             <FooterList>
               <li>
                 <FooterLink
-                  href="https://www.facebook.com/ryuhei.matsuo.50"
+                  href="https://www.facebook.com/ryuhei.matsuo.50" target="_blank"
                 >
                   <FaFacebook alt="Facebook: matsuwo" />
                 </FooterLink>
               </li>
               <li>
                 <FooterLink
-                  href="https://www.instagram.com/ryuhei_matsuo/"
-                  className="icon alt"
+                  href="https://www.instagram.com/ryuhei_matsuo/" target="_blank"
                 >
                   <FaInstagram alt="instagram: matsuwo" />
                 </FooterLink>
               </li>
               <li>
                 <FooterLink
-                  href="mailto:matsuwo611@gmail.com
-"
-                  className="icon alt"
+                  href="mailto:matsuwo611@gmail.com" target="_blank"
                 >
                   <FiMail alt="mail: matsuwo" />
+                </FooterLink>
+              </li>
+              <li>
+                <FooterLink
+                  href="https://www.tiktok.com/@matumatumatu" target="_blank"
+                >
+                  <TickTok width="16" alt="tiktok: matsuwo" />
                 </FooterLink>
               </li>
             </FooterList>
