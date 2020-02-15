@@ -7,9 +7,10 @@ import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
 import { Image } from "cloudinary-react";
 import loadable from '@loadable/component'
+import Footer from '../components/Footer';
+import Lazy from '../components/Lazy';
 
-const YoutubeItem = loadable(() => import('../components/YoutubeItem'));
-const Footer = loadable(() => import('../components/Footer'));
+const YoutubeItem = loadable(() => import(/* webpackChunkName: "YoutubeItem" */ '../components/YoutubeItem'));
 
 const SectionCss = css`
   padding: 6rem 0 4rem 0;
@@ -375,7 +376,9 @@ export default class Index extends React.Component {
     return (
       <YoutubeWrapper>
         {musicList.map(id => (
-          <YoutubeItem key={id} id={id} />
+          <Lazy key={id} triggerOnce rootMargin='100px 0px'>
+            <YoutubeItem id={id} />
+          </Lazy>
         ))}
       </YoutubeWrapper>
     );
