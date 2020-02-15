@@ -59,6 +59,7 @@ const HeadTitle = styled.h1`
   margin: 0;
   color: #fff;
   word-break: keep-all;
+  font-display: swap;
 
   @media screen and (min-width: 480px) {
     font-size: 150px;

@@ -110,7 +110,8 @@ const baseStyle = css`
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
-		line-height: 1.65rem;
+    line-height: 1.65rem;
+    font-display: swap;
 	}
 
 	a {
@@ -282,9 +283,6 @@ class MyDocument extends Document {
           />
           <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap" />
-          <noscript>
-            <link rel="stylesheet" href="/static/assets/css/noscript.css" />
-          </noscript>
         </Head>
         <Global styles={baseStyle} />
         <body>
