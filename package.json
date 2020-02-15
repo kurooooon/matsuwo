@@ -37,5 +37,8 @@
     "react-icons": "^3.8.0",
     "react-youtube": "^7.9.0",
     "sanitize.css": "^11.0.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.1.0"
   }
 }
