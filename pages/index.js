@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { Image } from "cloudinary-react";
 
@@ -662,6 +662,13 @@ export default class Index extends React.Component {
 
           <FooterSection>
             <FooterList>
+            <li>
+                <FooterLink
+                  href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw" target="_blank"
+                >
+                  <FaYoutube alt="Youtube: matsuwo" />
+                </FooterLink>
+              </li>
               <li>
                 <FooterLink
                   href="https://www.facebook.com/ryuhei.matsuo.50" target="_blank"
