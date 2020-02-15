@@ -16,7 +16,7 @@ const FooterSection = styled.section`
   }
 
   @media (max-width: 736px) {
-    padding: 3rem 1.5rem 1rem 1.5rem;
+    padding: 3rem 1.5rem 3rem 1.5rem;
   }
 
   @media (min-width: 480px) {
