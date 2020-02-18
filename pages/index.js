@@ -373,12 +373,11 @@ export default class Index extends React.Component {
     if (!musicList) {
       return null;
     }
-    console.log(musicList)
     return (
       <YoutubeWrapper>
         {musicList.map(({id, title}) => (
           <Lazy key={id} triggerOnce rootMargin='100px 0px'>
-            <YoutubeItem id={id} />
+            <YoutubeItem id={id} title={title} />
           </Lazy>
         ))}
       </YoutubeWrapper>
