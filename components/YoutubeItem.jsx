@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import styled from '@emotion/styled';
+import Lazy from './Lazy';
 
 const Title = styled.p`
   text-align: center;
@@ -10,10 +11,12 @@ const Title = styled.p`
 
 const YoutubeItem = React.memo(function Presenter ({ id, title }) {
   return (
-    <>
-      <YouTube opts={{width: '100%'}} videoId={id} />
+    <div>
+      <Lazy key={id} triggerOnce rootMargin='100px 0px'>
+        <YouTube opts={{width: '100%'}} videoId={id} />
+      </Lazy>
       <Title>{title}</Title>
-    </>
+    </div>
   );
 }, (prevProps, nextProps) =>
   prevProps.id === nextProps.id &&
