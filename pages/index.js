@@ -373,7 +373,7 @@ export default class Index extends React.Component {
     return (
       <YoutubeWrapper>
         {musicList.map(({id, title}) => (
-          <YoutubeItem id={id} title={title} />
+          <YoutubeItem key={id} id={id} title={title} />
         ))}
       </YoutubeWrapper>
     );

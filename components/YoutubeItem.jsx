@@ -12,7 +12,7 @@ const Title = styled.p`
 const YoutubeItem = React.memo(function Presenter ({ id, title }) {
   return (
     <div>
-      <Lazy key={id} triggerOnce rootMargin='100px 0px'>
+      <Lazy triggerOnce rootMargin='100px 0px'>
         <YouTube opts={{width: '100%'}} videoId={id} />
       </Lazy>
       <Title>{title}</Title>
