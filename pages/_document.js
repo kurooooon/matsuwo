@@ -1,19 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { Global, css } from '@emotion/core'
 
-const injectGA = () => {
-  if (typeof window == "undefined") {
-    return;
-  }
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", GA_ID);
-};
-
 const baseStyle = css`
   html, body, div, span, applet, object,
   iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -275,7 +262,6 @@ class MyDocument extends Document {
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
           ></script>
-          <script>{injectGA()}</script>
           <meta charSet="utf-8" />
           <meta
             name="viewport"

@@ -316,6 +316,19 @@ const Col = styled.div`
   }
 `;
 
+const injectGA = () => {
+  if (typeof window == "undefined") {
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", GA_ID);
+};
+
 export default class Index extends React.Component {
   static async getInitialProps({ req }) {
     const { env } = process;
@@ -384,6 +397,12 @@ export default class Index extends React.Component {
       <>
         <Head>
           <title>matsuwo / 松尾竜平 officail site | music &amp; art artist</title>
+          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
+          ></script>
+          <script>{injectGA()}</script>
         </Head>
         <main>
           <Header>
