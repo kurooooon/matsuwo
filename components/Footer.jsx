@@ -204,42 +204,56 @@ const Footer = function Presenter ({ id }) {
       <FooterList>
         <li>
           <FooterLink
-            href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw" target="_blank"
+            href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
+            target="_blank"
+            aria-label="ToLo Records Channel / Youtube"
           >
-            <FaYoutube alt="Youtube: matsuwo" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink href="https://twitter.com/MATUWOMATUWO" target="_blank">
-            <FaTwitter alt="twitter: matsuwo" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="https://www.facebook.com/ryuhei.matsuo.50" target="_blank"
-          >
-            <FaFacebook alt="Facebook: matsuwo" />
+            <FaYoutube alt="ToLo Records Channel / Youtube" />
           </FooterLink>
         </li>
         <li>
           <FooterLink
-            href="https://www.instagram.com/ryuhei_matsuo/" target="_blank"
+            href="https://twitter.com/MATUWOMATUWO"
+            target="_blank"
+            aria-label="@MATUWOMATUWO / Twitter"
           >
-            <FaInstagram alt="instagram: matsuwo" />
+            <FaTwitter alt="@MATUWOMATUWO / Twitter" />
           </FooterLink>
         </li>
         <li>
           <FooterLink
-            href="mailto:matsuwo611@gmail.com" target="_blank"
+            href="https://www.facebook.com/ryuhei.matsuo.50"
+            target="_blank"
+            aria-label="Ryuhei Matuso / Facebook"
           >
-            <FiMail alt="mail: matsuwo" />
+            <FaFacebook alt="Ryuhei Matuso / Facebook" />
           </FooterLink>
         </li>
         <li>
           <FooterLink
-            href="https://www.tiktok.com/@matumatumatu" target="_blank"
+            href="https://www.instagram.com/ryuhei_matsuo/"
+            target="_blank"
+            aria-label="ryuhei_matsuo / instagram"
           >
-            <TickTok width="16" alt="tiktok: matsuwo" />
+            <FaInstagram alt="ryuhei_matsuo / instagram" />
+          </FooterLink>
+        </li>
+        <li>
+          <FooterLink
+            href="https://www.tiktok.com/@matumatumatu"
+            target="_blank"
+            aria-label="@matumatumatu / tiktok"
+          >
+            <TickTok width="16" alt="@matumatumatu / tiktok" />
+          </FooterLink>
+        </li>
+        <li>
+          <FooterLink
+            href="mailto:matsuwo611@gmail.com"
+            target="_blank"
+            aria-label="mail to matsuwo"
+          >
+            <FiMail alt="mail to matsuwo" />
           </FooterLink>
         </li>
       </FooterList>

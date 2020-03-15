@@ -445,6 +445,7 @@ export default class Index extends React.Component {
                 publicId={`matsuwo/art/${id}`}
                 width="100%"
                 secure={true}
+                alt=""
               />
               <ArtTitle>{title}</ArtTitle>
             </ArtLink>
