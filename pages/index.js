@@ -13,7 +13,7 @@ const SectionCss = css`
   padding: 6rem 0 4rem 0;
 
   @media (max-width: 1140px) {
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 1rem 2rem ;
   }
   @media (max-width: 980px) {
     padding: 5rem 3rem 3rem 3rem;
@@ -112,9 +112,41 @@ const YoutubeWrapper = styled.div`
   }
 `;
 
-const YouTubeLink = styled.a`
+const WorkLink = styled.a`
   text-align: right;
   display: block;
+  border: none;
+`;
+
+const ArtWrapper = styled.div`
+  display: grid;
+  width: 100%;
+  grid-gap: 8px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 736px) {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+
+  @media (min-width: 1140px) {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+`;
+
+const Art = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const ArtTitle = styled.p`
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  width: 100%;
+`;
+
+const ArtLink = styled.a`
   border: none;
 `;
 
@@ -336,16 +368,22 @@ export default class Index extends React.Component {
     const youtubeObj = await fetch(
       `https://script.google.com/macros/s/${env.MUSIC_SHEET_KEY}/exec`
     );
-    const youtubeList = await youtubeObj.json();
+    const musicList = await youtubeObj.json();
 
     const newsObj = await fetch(
       `https://script.google.com/macros/s/${env.NEWS_SHEET_KEY}/exec`
     );
     const newsData = await newsObj.json();
 
+    const artObj = await fetch(
+      `https://script.google.com/macros/s/${env.ART_SHEET_KEY}/exec`
+    );
+    const artList = await artObj.json();
+
     return {
-      musicList: youtubeList,
-      news: newsData
+      musicList,
+      news: newsData,
+      artList
     };
   }
 
@@ -392,6 +430,30 @@ export default class Index extends React.Component {
     );
   }
 
+  renderArt() {
+    const { artList } = this.props;
+    if (!artList) {
+      return null;
+    }
+    return (
+      <ArtWrapper>
+        {artList.map(({id, title, url}) => (
+          <Art>
+            <ArtLink href={url} target="_blank">
+              <Image
+                cloudName="kurooooon"
+                publicId={`matsuwo/art/${id}`}
+                width="100%"
+                secure={true}
+              />
+              <ArtTitle>{title}</ArtTitle>
+            </ArtLink>
+          </Art>
+        ))}
+      </ArtWrapper>
+    );
+  }
+
   render() {
     return (
       <>
@@ -421,16 +483,28 @@ export default class Index extends React.Component {
           <WorksSection>
             <div>
               <SectionHeader>
-                <h2>Recent Works</h2>
+                <h2>Music</h2>
               </SectionHeader>
               {this.renderYouTube()}
               <p>
-                <YouTubeLink
+                <WorkLink
                   href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
                   target="_blank"
                 >
                   ...more
-                </YouTubeLink>
+                </WorkLink>
+              </p>
+              <SectionHeader>
+                <h2>Art</h2>
+              </SectionHeader>
+              {this.renderArt()}
+              <p>
+                <WorkLink
+                  href="https://www.saatchiart.com/account/profile/218701"
+                  target="_blank"
+                >
+                  ...more
+                </WorkLink>
               </p>
             </div>
           </WorksSection>
