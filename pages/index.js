@@ -402,9 +402,9 @@ export default class Index extends React.Component {
       return (
         <NewsItem key={item.id}>
           {item.link ? (
-            <a href={item.link} target="_blank">
-              {date} {item.description}
-            </a>
+            <p>
+              <a href={item.link} target="_blank">{date} {item.description}</a>
+            </p>
           ) : (
             <p>
               {date} {item.description}
