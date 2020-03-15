@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "@emotion/styled";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import TickTok from '../static/images/tiktok.svg'
 
@@ -207,6 +207,11 @@ const Footer = function Presenter ({ id }) {
             href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw" target="_blank"
           >
             <FaYoutube alt="Youtube: matsuwo" />
+          </FooterLink>
+        </li>
+        <li>
+          <FooterLink href="https://twitter.com/MATUWOMATUWO" target="_blank">
+            <FaTwitter alt="twitter: matsuwo" />
           </FooterLink>
         </li>
         <li>
