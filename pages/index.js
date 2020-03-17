@@ -438,7 +438,7 @@ export default class Index extends React.Component {
     return (
       <ArtWrapper>
         {artList.map(({id, title, url}) => (
-          <Art>
+          <Art key={id}>
             <ArtLink href={url} target="_blank">
               <Image
                 cloudName="kurooooon"
