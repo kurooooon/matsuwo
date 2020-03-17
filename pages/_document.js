@@ -236,6 +236,12 @@ const baseStyle = css`
 	}
 `;
 
+const GTM_CODE = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer', '${GTM_ID}');`
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -246,6 +252,10 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head prefix="og: http://ogp.me/ns#">
+          {/* {<!-- Google Tag Manager -->} */}
+          <script dangerouslySetInnerHTML={{__html: GTM_CODE}}
+          />
+          {/* {<!-- End Google Tag Manager -->} */}
           <meta name="google-site-verification" content={GSC_VARIFICATION} />
           <meta name="description" content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
           <meta name="keywords" content="matuswo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展" />
@@ -267,6 +277,9 @@ class MyDocument extends Document {
         </Head>
         <Global styles={baseStyle} />
         <body>
+          {/* {<!-- Google Tag Manager (noscript) -->} */}
+          <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{display:'none', visibility:'hidden'}}></iframe></noscript>
+          {/* {<!-- End Google Tag Manager (noscript) -->} */}
           <Main />
           <NextScript />
         </body>
