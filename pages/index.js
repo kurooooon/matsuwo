@@ -7,7 +7,9 @@ import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
 import { Image } from "cloudinary-react";
 import Footer from '../components/Footer';
-import YoutubeItem from '../components/YoutubeItem';
+import { YoutubeItem } from '../components/YoutubeItem';
+import { ArtItem } from '../components/ArtItem';
+import Lazy from '../components/Lazy';
 
 const SectionCss = css`
   padding: 6rem 0 4rem 0;
@@ -131,23 +133,6 @@ const ArtWrapper = styled.div`
   @media (min-width: 1140px) {
     grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   }
-`;
-
-const Art = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ArtTitle = styled.p`
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  width: 100%;
-`;
-
-const ArtLink = styled.a`
-  border: none;
 `;
 
 const ProfileImageWrapper = styled.div`
@@ -437,20 +422,9 @@ export default class Index extends React.Component {
     }
     return (
       <ArtWrapper>
-        {artList.map(({id, title, url}) => (
-          <Art key={id}>
-            <ArtLink href={url} target="_blank">
-              <Image
-                cloudName="kurooooon"
-                publicId={`matsuwo/art/${id}`}
-                width="100%"
-                secure={true}
-                alt=""
-              />
-              <ArtTitle>{title}</ArtTitle>
-            </ArtLink>
-          </Art>
-        ))}
+        {artList.map(({id, title, url}) => 
+        <ArtItem key={id} id={id} title={title} url={url} />
+      )}
       </ArtWrapper>
     );
   }
@@ -519,14 +493,16 @@ export default class Index extends React.Component {
                 <Row>
                   <Col>
                     <ProfileImageWrapper>
-                      <Image
-                        cloudName="kurooooon"
-                        publicId="matsuwo/profile_wkgtbv"
-                        width="100%"
-                        height="100%"
-                        alt=""
-                        secure={true}
-                      />
+                      <Lazy triggerOnce rootMargin='100px 0px'>
+                        <Image
+                          cloudName="kurooooon"
+                          publicId="matsuwo/profile_wkgtbv"
+                          width="100%"
+                          height="100%"
+                          alt=""
+                          secure={true}
+                        />
+                      </Lazy>
                     </ProfileImageWrapper>
                   </Col>
                   <AboutDescription>

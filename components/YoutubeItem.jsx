@@ -9,7 +9,7 @@ const Title = styled.p`
   font-size: 1.1rem;
 `;
 
-const YoutubeItem = React.memo(function Presenter ({ id, title }) {
+export const YoutubeItem = React.memo(function Presenter ({ id, title }) {
   const onPlay = useCallback(() => {
     window.dataLayer.push({
       event: 'playYoutube',
@@ -32,6 +32,4 @@ const YoutubeItem = React.memo(function Presenter ({ id, title }) {
 }, (prevProps, nextProps) =>
   prevProps.id === nextProps.id &&
   prevProps.title === nextProps.title
-)
-
-export default YoutubeItem;
+);
