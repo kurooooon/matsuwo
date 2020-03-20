@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import TickTok from '../static/images/tiktok.svg'
+import { SocialIcon } from './SocialIcon'
 
 const FooterSection = styled.section`
   padding: 6rem 0 4rem 0;
@@ -137,19 +138,6 @@ const FooterSection = styled.section`
   }
 `;
 
-const FooterLink = styled.a`
-  font-size: 1rem;
-  border-bottom: none;
-
-  @media (min-width: 480px) {
-    font-size: 1.1rem;
-  }
-
-  @media (min-width: 1140px) {
-    font-size: 1.2rem;
-  }
-`;
-
 const CopyRight = styled.ul`
   li {
     font-size: 0.8rem;
@@ -202,60 +190,48 @@ const Footer = function Presenter ({ id }) {
   return (
     <FooterSection>
       <FooterList>
-        <li>
-          <FooterLink
-            href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
-            target="_blank"
-            aria-label="ToLo Records Channel / Youtube"
-          >
-            <FaYoutube alt="ToLo Records Channel / Youtube" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="https://twitter.com/MATUWOMATUWO"
-            target="_blank"
-            aria-label="@MATUWOMATUWO / Twitter"
-          >
-            <FaTwitter alt="@MATUWOMATUWO / Twitter" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="https://www.facebook.com/ryuhei.matsuo.50"
-            target="_blank"
-            aria-label="Ryuhei Matuso / Facebook"
-          >
-            <FaFacebook alt="Ryuhei Matuso / Facebook" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="https://www.instagram.com/ryuhei_matsuo/"
-            target="_blank"
-            aria-label="ryuhei_matsuo / instagram"
-          >
-            <FaInstagram alt="ryuhei_matsuo / instagram" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="https://www.tiktok.com/@matumatumatu"
-            target="_blank"
-            aria-label="@matumatumatu / tiktok"
-          >
-            <TickTok width="16" alt="@matumatumatu / tiktok" />
-          </FooterLink>
-        </li>
-        <li>
-          <FooterLink
-            href="mailto:matsuwo611@gmail.com"
-            target="_blank"
-            aria-label="mail to matsuwo"
-          >
-            <FiMail alt="mail to matsuwo" />
-          </FooterLink>
-        </li>
+        <SocialIcon
+          id="Youtube"
+          link="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
+          label="ToLo Records Channel / Youtube"
+        >
+          <FaYoutube alt="ToLo Records Channel / Youtube" />
+        </SocialIcon>
+        <SocialIcon
+          id="Twitter"
+          link="https://twitter.com/MATUWOMATUWO"
+          label="@MATUWOMATUWO / Twitter"
+        >
+          <FaTwitter alt="@MATUWOMATUWO / Twitter" />
+        </SocialIcon>
+        <SocialIcon
+          id="Facebook"
+          link="https://www.facebook.com/ryuhei.matsuo.50"
+          label="Ryuhei Matuso / Facebook"
+        >
+          <FaFacebook alt="Ryuhei Matuso / Facebook" />
+        </SocialIcon>
+        <SocialIcon
+          id="instagram"
+          link="https://www.instagram.com/ryuhei_matsuo/"
+          label="ryuhei_matsuo / instagram"
+        >
+          <FaInstagram alt="ryuhei_matsuo / instagram" />
+        </SocialIcon>
+        <SocialIcon
+          id="tiktok"
+          link="https://www.tiktok.com/@matumatumatu"
+          label="@matumatumatu / tiktok"
+        >
+          <TickTok width="16" alt="@matumatumatu / tiktok" />
+        </SocialIcon>
+        <SocialIcon
+          id="mail"
+          link="mailto:matsuwo611@gmail.com"
+          label="mail to matsuwo"
+        >
+          <FiMail alt="mail to matsuwo" />
+        </SocialIcon>
       </FooterList>
       <CopyRight>
         <li>&copy; matsuwo / 松尾竜平</li>
