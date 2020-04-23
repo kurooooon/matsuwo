@@ -34,6 +34,6 @@
     "react-ga": "^2.7.0",
     "react-icons": "^3.8.0",
     "react-youtube": "^7.9.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^5.0.0"
   }
 }
