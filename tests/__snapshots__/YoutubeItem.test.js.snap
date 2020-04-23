@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<YoutubeItem> snapshot testing 1`] = `
+<div>
+  <div />
+  <p
+    className="css-1hh18li"
+  >
+    あなたのためにさ
+  </p>
+</div>
+`;

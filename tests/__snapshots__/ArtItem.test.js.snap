@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArtItem> snapshot testing 1`] = `
+<div
+  className="css-rtde4j"
+>
+  <a
+    className="css-jsj4j0"
+    href="https://www.saatchiart.com/art/Painting-After-the-party/218701/4519690/view"
+    onClick={[Function]}
+    target="_blank"
+  >
+    <div />
+    <p
+      className="css-52lrx0"
+    >
+      After the party
+    </p>
+  </a>
+</div>
+`;

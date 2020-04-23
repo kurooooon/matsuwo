@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "deploy": "yarn build && next export",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "analyze": "ANALYZE=true yarn build"
   },
   "repository": {
@@ -43,6 +43,9 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^9.2.1",
-    "@svgr/webpack": "^5.1.0"
+    "@svgr/webpack": "^5.1.0",
+    "jest": "^25.4.0",
+    "jest-svg-transformer": "^1.0.0",
+    "react-test-renderer": "^16.13.1"
   }
 }
