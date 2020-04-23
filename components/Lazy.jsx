@@ -1,13 +1,13 @@
 import React from 'react';
-import { InView } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 
-const Lazy = function Lazy({ children, rootMargin, triggerOnce }) { 
+const Lazy = ({ children, rootMargin, triggerOnce }) => { 
+  const [ref, inView] = useInView({
+    rootMargin,
+    triggerOnce
+  });
   return (
-    <InView triggerOnce={triggerOnce} rootMargin={rootMargin}>
-      {({ inView, ref }) => (
-        <div ref={ref}>{inView ? children : null}</div>
-      )}
-    </InView>
+    <div ref={ref}>{inView ? children : null}</div>
   );
 }
 
