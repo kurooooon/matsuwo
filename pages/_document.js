@@ -94,7 +94,7 @@ const baseStyle = css`
 
 	body, input, select, textarea {
 		color: #666;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
     line-height: 1.65rem;
@@ -258,7 +258,7 @@ class MyDocument extends Document {
           {/* {<!-- End Google Tag Manager -->} */}
           <meta name="google-site-verification" content={GSC_VARIFICATION} />
           <meta name="description" content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
-          <meta name="keywords" content="matuswo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展" />
+          <meta name="keywords" content="matsuwo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展" />
           <link rel="canonical" href="https://matsuwo.netlify.com" />
           <meta property="og:title" content="matsuwo / 松尾竜平 officail site | music &amp; art artist" />
           <meta property="og:type" content="website" />

@@ -130,12 +130,6 @@ const FooterSection = styled.section`
     margin-left: 1rem;
     padding: 0 0 0 1rem;
   }
-
-  .copyright li:first-child {
-    border-left: 0;
-    margin-left: 0;
-    padding: 0;
-  }
 `;
 
 const CopyRight = styled.ul`
