@@ -9,7 +9,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 sitemap({  
-  baseUrl: 'https://matsuwo.netlify.com',  
+  baseUrl: 'https://matsuwo.netlify.app',  
   pagesDirectory: __dirname + "/pages",  
   targetDirectory : 'static/'  
 });

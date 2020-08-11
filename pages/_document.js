@@ -252,6 +252,9 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head prefix="og: http://ogp.me/ns#">
+          <link rel="canonical" href="https://matsuwo.netlify.app" />
+          <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap" />
           {/* {<!-- Google Tag Manager -->} */}
           <script dangerouslySetInnerHTML={{__html: GTM_CODE}}
           />
@@ -259,10 +262,9 @@ class MyDocument extends Document {
           <meta name="google-site-verification" content={GSC_VARIFICATION} />
           <meta name="description" content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
           <meta name="keywords" content="matsuwo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展" />
-          <link rel="canonical" href="https://matsuwo.netlify.com" />
           <meta property="og:title" content="matsuwo / 松尾竜平 officail site | music &amp; art artist" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://matsuwo.netlify.com" />
+          <meta property="og:url" content="https://matsuwo.netlify.app" />
           <meta property="og:image" content="https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg" />
           <meta property="og:site_name" content="matsuwo / 松尾竜平 officail site | music &amp; art artist" />
           <meta property="og:description" content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。" />
@@ -272,8 +274,6 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, user-scalable=no"
           />
-          <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro:300,300italic,400,400italic&display=swap" />
         </Head>
         <Global styles={baseStyle} />
         <body>
