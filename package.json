@@ -44,7 +44,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "9.5.4",
     "@svgr/webpack": "5.4.0",
-    "jest": "26.4.2",
+    "jest": "26.5.2",
     "jest-svg-transformer": "1.0.0",
     "react-test-renderer": "16.13.1"
   }
