@@ -42,7 +42,7 @@
     "sanitize.css": "^11.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "9.5.4",
+    "@next/bundle-analyzer": "9.5.5",
     "@svgr/webpack": "5.4.0",
     "jest": "26.5.2",
     "jest-svg-transformer": "1.0.0",
