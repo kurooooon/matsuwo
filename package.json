@@ -46,6 +46,6 @@
     "@svgr/webpack": "5.4.0",
     "jest": "26.5.3",
     "jest-svg-transformer": "1.0.0",
-    "react-test-renderer": "16.13.1"
+    "react-test-renderer": "16.14.0"
   }
 }
