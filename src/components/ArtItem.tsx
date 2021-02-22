@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react';
-import { Image } from "cloudinary-react";
+import { Image } from 'cloudinary-react';
 import styled from '@emotion/styled';
 import Lazy from './Lazy';
+import { useTrackGA } from '../hooks/useTrackGA';
 
 const Art = styled.div`
   display: flex;
@@ -20,18 +21,25 @@ const ArtLink = styled.a`
   border: none;
 `;
 
-export const ArtItem = React.memo(function Presenter ({ id, title, url }) {
+type Props = {
+  id: string;
+  title: string;
+  url: string;
+};
+
+const ArtItem = ({ id, title, url }: Props) => {
+  const trackGA = useTrackGA();
   const onClick = useCallback(() => {
-    window.dataLayer.push({
+    trackGA({
       event: 'clickArt',
       id,
-      title
-    }, [id, title, url])
-  });
+      title,
+    });
+  }, [id, title, url]);
   return (
     <Art key={id}>
       <ArtLink onClick={onClick} href={url} target="_blank">
-        <Lazy triggerOnce rootMargin='100px 0px'>
+        <Lazy triggerOnce rootMargin="100px 0px">
           <Image
             cloudName="kurooooon"
             publicId={`matsuwo/art/${id}`}
@@ -44,8 +52,9 @@ export const ArtItem = React.memo(function Presenter ({ id, title, url }) {
       </ArtLink>
     </Art>
   );
-}, (prevProps, nextProps) =>
-  prevProps.id === nextProps.id &&
-  prevProps.title === nextProps.title &&
-  prevProps.url === nextProps.url
-);
+};
+
+const areEquals = (prev: Props, next: Props) =>
+  prev.id === next.id && prev.title === next.title && prev.url === next.url;
+
+export default React.memo(ArtItem, areEquals);
