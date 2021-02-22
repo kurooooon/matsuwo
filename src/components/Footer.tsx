@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from "@emotion/styled";
-import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
-import { FiMail } from "react-icons/fi";
-import TickTok from '../static/images/tiktok.svg'
-import { SocialIcon } from './SocialIcon'
+import styled from '@emotion/styled';
+import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { SiTiktok } from 'react-icons/si';
+import { FiMail } from 'react-icons/fi';
+import SocialIcon from './SocialIcon';
 
 const FooterSection = styled.section`
   padding: 6rem 0 4rem 0;
@@ -30,17 +30,26 @@ const FooterSection = styled.section`
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
-  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay2_xpyeat.png"), url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay4_fyhlai.svg"), linear-gradient(45deg, #614d20, #333 95%);
+  background-image: url('https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay2_xpyeat.png'),
+    url('https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay4_fyhlai.svg'),
+    linear-gradient(45deg, #614d20, #333 95%);
 
   a {
     border-bottom-color: rgba(255, 255, 255, 0.5);
   }
 
-    a:hover {
-      color: #ffffff;
-    }
+  a:hover {
+    color: #ffffff;
+  }
 
-  h1, h2, h3, h4, h5, h6, strong, b {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
     color: #ffffff;
   }
 
@@ -52,34 +61,34 @@ const FooterSection = styled.section`
     background: #ffffff;
   }
 
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"],
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'],
   button,
   .button {
     box-shadow: inset 0 0 0 1px #ffffff;
     color: #ffffff !important;
   }
 
-  input[type="submit"]:hover,
-  input[type="reset"]:hover,
-  input[type="button"]:hover,
+  input[type='submit']:hover,
+  input[type='reset']:hover,
+  input[type='button']:hover,
   button:hover,
   .button:hover {
     background-color: rgba(255, 255, 255, 0.125);
   }
 
-  input[type="submit"]:active,
-  input[type="reset"]:active,
-  input[type="button"]:active,
+  input[type='submit']:active,
+  input[type='reset']:active,
+  input[type='button']:active,
   button:active,
   .button:active {
     background-color: rgba(255, 255, 255, 0.25);
   }
 
-  input[type="submit"].primary,
-  input[type="reset"].primary,
-  input[type="button"].primary,
+  input[type='submit'].primary,
+  input[type='reset'].primary,
+  input[type='button'].primary,
   button.primary,
   .button.primary {
     background-color: #ffffff;
@@ -87,18 +96,18 @@ const FooterSection = styled.section`
     color: #4686a0 !important;
   }
 
-  input[type="submit"].primary:hover,
-  input[type="reset"].primary:hover,
-  input[type="button"].primary:hover,
+  input[type='submit'].primary:hover,
+  input[type='reset'].primary:hover,
+  input[type='button'].primary:hover,
   button.primary:hover,
   .button.primary:hover {
     background-color: rgba(255, 255, 255, 0.125) !important;
     color: #ffffff !important;
   }
 
-  input[type="submit"].primary:active,
-  input[type="reset"].primary:active,
-  input[type="button"].primary:active,
+  input[type='submit'].primary:active,
+  input[type='reset'].primary:active,
+  input[type='button'].primary:active,
   button.primary:active,
   .button.primary:active {
     background-color: rgba(255, 255, 255, 0.25) !important;
@@ -180,7 +189,7 @@ const FooterList = styled.ul`
   }
 `;
 
-const Footer = function Presenter ({ id }) {
+const Footer = function Presenter() {
   return (
     <FooterSection>
       <FooterList>
@@ -189,42 +198,42 @@ const Footer = function Presenter ({ id }) {
           link="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
           label="ToLo Records Channel / Youtube"
         >
-          <FaYoutube alt="ToLo Records Channel / Youtube" />
+          <FaYoutube />
         </SocialIcon>
         <SocialIcon
           id="Twitter"
           link="https://twitter.com/MATUWOMATUWO"
           label="@MATUWOMATUWO / Twitter"
         >
-          <FaTwitter alt="@MATUWOMATUWO / Twitter" />
+          <FaTwitter />
         </SocialIcon>
         <SocialIcon
           id="Facebook"
           link="https://www.facebook.com/ryuhei.matsuo.50"
           label="Ryuhei Matuso / Facebook"
         >
-          <FaFacebook alt="Ryuhei Matuso / Facebook" />
+          <FaFacebook />
         </SocialIcon>
         <SocialIcon
           id="instagram"
           link="https://www.instagram.com/ryuhei_matsuo/"
           label="ryuhei_matsuo / instagram"
         >
-          <FaInstagram alt="ryuhei_matsuo / instagram" />
+          <FaInstagram />
         </SocialIcon>
         <SocialIcon
           id="tiktok"
           link="https://www.tiktok.com/@matumatumatu"
           label="@matumatumatu / tiktok"
         >
-          <TickTok width="16" alt="@matumatumatu / tiktok" />
+          <SiTiktok width="16" />
         </SocialIcon>
         <SocialIcon
           id="mail"
           link="mailto:matsuwo611@gmail.com"
           label="mail to matsuwo"
         >
-          <FiMail alt="mail to matsuwo" />
+          <FiMail />
         </SocialIcon>
       </FooterList>
       <CopyRight>
@@ -234,7 +243,7 @@ const Footer = function Presenter ({ id }) {
         </li>
       </CopyRight>
     </FooterSection>
-  )
-}
+  );
+};
 
 export default Footer;
