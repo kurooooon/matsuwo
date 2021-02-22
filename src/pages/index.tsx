@@ -455,7 +455,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-156990344-1"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
         ></script>
       </Head>
       <main>
