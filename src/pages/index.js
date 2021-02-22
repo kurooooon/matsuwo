@@ -6,16 +6,16 @@ import { css } from "@emotion/core";
 import { format } from "date-fns";
 import ja from "date-fns/locale/ja";
 import { Image } from "cloudinary-react";
-import Footer from '../components/Footer';
-import { YoutubeItem } from '../components/YoutubeItem';
-import { ArtItem } from '../components/ArtItem';
-import Lazy from '../components/Lazy';
+import Footer from "../components/Footer";
+import { YoutubeItem } from "../components/YoutubeItem";
+import { ArtItem } from "../components/ArtItem";
+import Lazy from "../components/Lazy";
 
 const SectionCss = css`
   padding: 6rem 0 4rem 0;
 
   @media (max-width: 1140px) {
-    padding: 4rem 1rem 2rem ;
+    padding: 4rem 1rem 2rem;
   }
   @media (max-width: 980px) {
     padding: 5rem 3rem 3rem 3rem;
@@ -33,8 +33,8 @@ const Header = styled.section`
   height: 90vh;
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
-  background-attachment: fixed,	fixed, fixed;
-  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg"); 
+  background-attachment: fixed, fixed, fixed;
+  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg");
   background-position: top;
   overflow: hidden;
   position: relative;
@@ -72,9 +72,7 @@ const SectionHeader = styled.header`
   h2 {
     margin: 0;
     font: inherit;
-    color: ${props => props.inverse
-      ? "#fff"
-      : "#555"};
+    color: ${(props) => (props.inverse ? "#fff" : "#555")};
     line-height: 1.35rem;
     font-size: 1.4rem;
     font-weight: 200;
@@ -91,11 +89,8 @@ const SectionHeader = styled.header`
   }
 
   :after {
-    background: ${props => props.inverse
-      ? "#ffffff"
-      : "#90909080"
-    };
-    content: '';
+    background: ${(props) => (props.inverse ? "#ffffff" : "#90909080")};
+    content: "";
     display: inline-block;
     height: 1px;
     margin-top: 1.5rem;
@@ -168,7 +163,7 @@ const AboutWrapper = styled.section`
   position: relative;
   background-color: #333;
   color: rgba(255, 255, 255, 0.75);
-  background-attachment: fixed,	fixed;
+  background-attachment: fixed, fixed;
   background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/back_wqixtg.jpg");
   z-index: 0;
   overflow: hidden;
@@ -182,7 +177,7 @@ const AboutWrapper = styled.section`
   }
 
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -10px;
     bottom: -10px;
@@ -201,7 +196,14 @@ const AboutWrapper = styled.section`
     color: #ffffff;
   }
 
-  h1, h2, h3, h4, h5, h6, strong, b {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
     color: #ffffff;
   }
 
@@ -343,7 +345,7 @@ const injectGA = () => {
   }
   gtag("js", new Date());
 
-  gtag("config", GA_ID);
+  gtag("config", process.env.NEXT_PUBLIC_GA_ID);
 };
 
 export default class Index extends React.Component {
@@ -368,7 +370,7 @@ export default class Index extends React.Component {
     return {
       musicList,
       news: newsData,
-      artList
+      artList,
     };
   }
 
@@ -377,18 +379,20 @@ export default class Index extends React.Component {
     if (!news) {
       return;
     }
-    const items = news.map(item => {
+    const items = news.map((item) => {
       if (!item.description) {
         return null;
       }
       const date = format(new Date(item.date), "yyyy MM/dd(EEEEE)", {
-        locale: ja
+        locale: ja,
       });
       return (
         <NewsItem key={item.id}>
           {item.link ? (
             <p>
-              <a href={item.link} target="_blank">{date} {item.description}</a>
+              <a href={item.link} target="_blank">
+                {date} {item.description}
+              </a>
             </p>
           ) : (
             <p>
@@ -408,7 +412,7 @@ export default class Index extends React.Component {
     }
     return (
       <YoutubeWrapper>
-        {musicList.map(({id, title}) => (
+        {musicList.map(({ id, title }) => (
           <YoutubeItem key={id} id={id} title={title} />
         ))}
       </YoutubeWrapper>
@@ -422,9 +426,9 @@ export default class Index extends React.Component {
     }
     return (
       <ArtWrapper>
-        {artList.map(({id, title, url}) => 
-        <ArtItem key={id} id={id} title={title} url={url} />
-      )}
+        {artList.map(({ id, title, url }) => (
+          <ArtItem key={id} id={id} title={title} url={url} />
+        ))}
       </ArtWrapper>
     );
   }
@@ -433,7 +437,9 @@ export default class Index extends React.Component {
     return (
       <>
         <Head>
-          <title>matsuwo / 松尾竜平 officail site | music &amp; art artist</title>
+          <title>
+            matsuwo / 松尾竜平 officail site | music &amp; art artist
+          </title>
           {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <script
             async
@@ -493,7 +499,7 @@ export default class Index extends React.Component {
                 <Row>
                   <Col>
                     <ProfileImageWrapper>
-                      <Lazy triggerOnce rootMargin='100px 0px'>
+                      <Lazy triggerOnce rootMargin="100px 0px">
                         <Image
                           cloudName="kurooooon"
                           publicId="matsuwo/profile_wkgtbv"
@@ -506,7 +512,7 @@ export default class Index extends React.Component {
                     </ProfileImageWrapper>
                   </Col>
                   <AboutDescription>
-                    <p>matsuwo / 松尾竜平</p> 
+                    <p>matsuwo / 松尾竜平</p>
                     <p>
                       北海道札幌での
                       <a
