@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import styled from "@emotion/styled";
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
-import TickTok from '../static/images/tiktok.svg'
-import { SocialIcon } from './SocialIcon'
+import { SocialIcon } from "./SocialIcon";
 
 const FooterSection = styled.section`
   padding: 6rem 0 4rem 0;
@@ -30,17 +30,26 @@ const FooterSection = styled.section`
   background-position: top left, center center, center center;
   background-size: auto, cover, cover;
   text-align: center;
-  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay2_xpyeat.png"), url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay4_fyhlai.svg"), linear-gradient(45deg, #614d20, #333 95%);
+  background-image: url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay2_xpyeat.png"),
+    url("https://res.cloudinary.com/kurooooon/image/upload/v1579370033/matsuwo/overlay4_fyhlai.svg"),
+    linear-gradient(45deg, #614d20, #333 95%);
 
   a {
     border-bottom-color: rgba(255, 255, 255, 0.5);
   }
 
-    a:hover {
-      color: #ffffff;
-    }
+  a:hover {
+    color: #ffffff;
+  }
 
-  h1, h2, h3, h4, h5, h6, strong, b {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
     color: #ffffff;
   }
 
@@ -180,7 +189,7 @@ const FooterList = styled.ul`
   }
 `;
 
-const Footer = function Presenter ({ id }) {
+const Footer = function Presenter({ id }) {
   return (
     <FooterSection>
       <FooterList>
@@ -217,7 +226,7 @@ const Footer = function Presenter ({ id }) {
           link="https://www.tiktok.com/@matumatumatu"
           label="@matumatumatu / tiktok"
         >
-          <TickTok width="16" alt="@matumatumatu / tiktok" />
+          <SiTiktok width="16" alt="@matumatumatu / tiktok" />
         </SocialIcon>
         <SocialIcon
           id="mail"
@@ -234,7 +243,7 @@ const Footer = function Presenter ({ id }) {
         </li>
       </CopyRight>
     </FooterSection>
-  )
-}
+  );
+};
 
 export default Footer;
