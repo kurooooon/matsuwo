@@ -473,7 +473,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
         </NewSection>
 
         <WorksSection>
-          <div>
+          <Lazy triggerOnce rootMargin="300px 0px">
             <SectionHeader>
               <h2>Music</h2>
             </SectionHeader>
@@ -486,6 +486,8 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
                 ...more
               </WorkLink>
             </p>
+          </Lazy>
+          <Lazy triggerOnce rootMargin="300px 0px">
             <SectionHeader>
               <h2>Art</h2>
             </SectionHeader>
@@ -498,7 +500,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
                 ...more
               </WorkLink>
             </p>
-          </div>
+          </Lazy>
         </WorksSection>
 
         <Lazy triggerOnce rootMargin="300px 0px">
