@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
 import styled from '@emotion/styled';
@@ -392,7 +392,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
 
     gtag('config', process.env.NEXT_PUBLIC_GA_ID);
   }, []);
-  const renderNews = () => {
+  const renderedNews = useMemo(() => {
     if (!news) {
       return;
     }
@@ -420,9 +420,9 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
       );
     });
     return <NewsWrapper>{items}</NewsWrapper>;
-  };
+  }, [news]);
 
-  const renderYouTube = () => {
+  const renderedYouTube = useMemo(() => {
     if (!musicList) {
       return null;
     }
@@ -433,9 +433,9 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
         ))}
       </YoutubeWrapper>
     );
-  };
+  }, [musicList]);
 
-  const renderArt = () => {
+  const renderedArt = useMemo(() => {
     if (!artList) {
       return null;
     }
@@ -446,7 +446,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
         ))}
       </ArtWrapper>
     );
-  };
+  }, [artList]);
 
   return (
     <>
@@ -468,7 +468,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
             <SectionHeader>
               <h2>What's New</h2>
             </SectionHeader>
-            {renderNews()}
+            {renderedNews}
           </NewContainer>
         </NewSection>
 
@@ -477,7 +477,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
             <SectionHeader>
               <h2>Music</h2>
             </SectionHeader>
-            {renderYouTube()}
+            {renderedYouTube}
             <p>
               <WorkLink
                 href="https://www.youtube.com/channel/UCRSPD9OHzBjDfY9EFE4hDHw"
@@ -489,7 +489,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
             <SectionHeader>
               <h2>Art</h2>
             </SectionHeader>
-            {renderArt()}
+            {renderedArt}
             <p>
               <WorkLink
                 href="https://www.saatchiart.com/account/profile/218701"
@@ -501,65 +501,67 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
           </div>
         </WorksSection>
 
-        <AboutWrapper>
-          <AboutContainer>
-            <AboutInnerWrapper>
-              <SectionHeader inverse>
-                <h2>About</h2>
-              </SectionHeader>
-              <Row>
-                <Col>
-                  <ProfileImageWrapper>
-                    <Lazy triggerOnce rootMargin="100px 0px">
-                      <Image
-                        cloudName="kurooooon"
-                        publicId="matsuwo/profile_wkgtbv"
-                        width="100%"
-                        height="100%"
-                        alt=""
-                        secure={true}
-                      />
-                    </Lazy>
-                  </ProfileImageWrapper>
-                </Col>
-                <AboutDescription>
-                  <p>matsuwo / 松尾竜平</p>
-                  <p>
-                    北海道札幌での
-                    <a
-                      href="https://www.saatchiart.com/account/profile/218701"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      アート
-                    </a>
-                    の制作や個展、音楽制作やライブ活動を精力的に行い、2019年春より東京での活動をスタート。
-                    2013年matsuwo名義で
-                    <a
-                      href="https://tower.jp/artist/2149889/matsuwo"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      宅録CD
-                    </a>
-                    をリリース。
-                  </p>
-                  <p>
-                    歌詞と曲は心揺さぶられるできごと作品や言葉などありふれた日常の中からインスパイアされ主にJ-popの曲をlogic
-                    proやProtoolsで制作しており、音はいたってシンプルで分厚く重ねない。
-                    影響されたアーティストはゆず、ミスターチルドレン、サザンオールスターズ、宇多田ヒカルなどなど。
-                    ライブでは主にアコースティックギターの弾き語り形式で演奏。
-                    使用アコースティックギターはリサイクルショップで購入した1560円のモーリス。
-                    今まで使ってきたどれよりも弾きやすい。
-                  </p>
-                  <p>
-                    アートでは油絵を制作してイタリア、フランス、ニューヨークの展覧会やアートインレジデンスを経験後、音楽ジャケットやチラシのアートワークを担当したりアートフェアや個展などで絵画を発表している。
-                  </p>
-                </AboutDescription>
-              </Row>
-            </AboutInnerWrapper>
-          </AboutContainer>
-        </AboutWrapper>
+        <Lazy triggerOnce rootMargin="300px 0px">
+          <AboutWrapper>
+            <AboutContainer>
+              <AboutInnerWrapper>
+                <SectionHeader inverse>
+                  <h2>About</h2>
+                </SectionHeader>
+                <Row>
+                  <Col>
+                    <ProfileImageWrapper>
+                      <Lazy triggerOnce rootMargin="100px 0px">
+                        <Image
+                          cloudName="kurooooon"
+                          publicId="matsuwo/profile_wkgtbv"
+                          width="100%"
+                          height="100%"
+                          alt=""
+                          secure={true}
+                        />
+                      </Lazy>
+                    </ProfileImageWrapper>
+                  </Col>
+                  <AboutDescription>
+                    <p>matsuwo / 松尾竜平</p>
+                    <p>
+                      北海道札幌での
+                      <a
+                        href="https://www.saatchiart.com/account/profile/218701"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        アート
+                      </a>
+                      の制作や個展、音楽制作やライブ活動を精力的に行い、2019年春より東京での活動をスタート。
+                      2013年matsuwo名義で
+                      <a
+                        href="https://tower.jp/artist/2149889/matsuwo"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        宅録CD
+                      </a>
+                      をリリース。
+                    </p>
+                    <p>
+                      歌詞と曲は心揺さぶられるできごと作品や言葉などありふれた日常の中からインスパイアされ主にJ-popの曲をlogic
+                      proやProtoolsで制作しており、音はいたってシンプルで分厚く重ねない。
+                      影響されたアーティストはゆず、ミスターチルドレン、サザンオールスターズ、宇多田ヒカルなどなど。
+                      ライブでは主にアコースティックギターの弾き語り形式で演奏。
+                      使用アコースティックギターはリサイクルショップで購入した1560円のモーリス。
+                      今まで使ってきたどれよりも弾きやすい。
+                    </p>
+                    <p>
+                      アートでは油絵を制作してイタリア、フランス、ニューヨークの展覧会やアートインレジデンスを経験後、音楽ジャケットやチラシのアートワークを担当したりアートフェアや個展などで絵画を発表している。
+                    </p>
+                  </AboutDescription>
+                </Row>
+              </AboutInnerWrapper>
+            </AboutContainer>
+          </AboutWrapper>
+        </Lazy>
 
         <Footer />
       </main>
