@@ -22,13 +22,13 @@ class MyDocument extends Document {
             name="keywords"
             content="matsuwo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展"
           />
-          <link rel="canonical" href="https://matsuwo.netlify.com" />
+          <link rel="canonical" href="https://matsuwo.netlify.app" />
           <meta
             property="og:title"
             content="matsuwo / 松尾竜平 officail site | music &amp; art artist"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://matsuwo.netlify.com" />
+          <meta property="og:url" content="https://matsuwo.netlify.app" />
           <meta
             property="og:image"
             content="https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg"
