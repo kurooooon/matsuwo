@@ -34,7 +34,7 @@ const Header = styled.section`
   background-color: #4686a0;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed, fixed;
-  background-image: url('https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/header_ylfwfi.jpg');
+  background-image: url('https://res.cloudinary.com/kurooooon/image/upload/f_auto/v1579369001/matsuwo/header_ylfwfi.jpg');
   background-position: top;
   overflow: hidden;
   position: relative;
@@ -168,7 +168,7 @@ const AboutWrapper = styled.section`
   background-color: #333;
   color: rgba(255, 255, 255, 0.75);
   background-attachment: fixed, fixed;
-  background-image: url('https://res.cloudinary.com/kurooooon/image/upload/v1579369001/matsuwo/back_wqixtg.jpg');
+  background-image: url('https://res.cloudinary.com/kurooooon/image/upload/f_auto/v1579369001/matsuwo/back_wqixtg.jpg');
   z-index: 0;
   overflow: hidden;
   background-color: #000000dd;
