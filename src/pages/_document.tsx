@@ -43,10 +43,6 @@ class MyDocument extends Document {
           />
           <meta name="twitter:card" content="summary" />
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-          />
           <link rel="stylesheet" href="https://unpkg.com/sanitize.css" />
           <link
             rel="stylesheet"
