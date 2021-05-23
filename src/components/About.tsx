@@ -4,8 +4,8 @@ import { SectionHeader } from './SectionHeader';
 import { Row } from './Row';
 import { Col } from './Col';
 import Lazy from './Lazy';
-import Image from 'next/image';
 import { SectionCss } from './Section';
+import { Image } from 'cloudinary-react';
 
 const AboutWrapper = styled.section`
   ${SectionCss}
@@ -164,9 +164,12 @@ const About = () => (
             <ProfileImageWrapper>
               <Lazy triggerOnce rootMargin="100px 0px">
                 <Image
-                  src="https://res.cloudinary.com/kurooooon/image/upload/v1579369005/matsuwo/profile_wkgtbv.jpg"
-                  width="800"
-                  height="800"
+                  cloudName="kurooooon"
+                  publicId="matsuwo/profile_wkgtbv"
+                  width="100%"
+                  height="100%"
+                  alt=""
+                  secure={true}
                 />
               </Lazy>
             </ProfileImageWrapper>

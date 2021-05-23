@@ -11,10 +11,6 @@ sitemap({
 });
 
 module.exports = withBundleAnalyzer({
-  images: {
-    domains: ['res.cloudinary.com'],
-    loader: 'cloudinary',
-  },
   exportPathMap() {
     return {
       '/': { page: '/' },
