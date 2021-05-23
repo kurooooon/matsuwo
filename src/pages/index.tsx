@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import fetch from 'isomorphic-unfetch';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { format } from 'date-fns';
 import ja from 'date-fns/locale/ja';
-import { Image } from 'cloudinary-react';
 import Footer from '../components/Footer';
 import YoutubeItem from '../components/YoutubeItem';
 import ArtItem from '../components/ArtItem';
@@ -342,20 +342,14 @@ const Col = styled.div`
 export const getStaticProps = async () => {
   const { env } = process;
 
-  const youtubeObj = await fetch(
-    `https://script.google.com/macros/s/${env.MUSIC_SHEET_KEY}/exec`
-  );
-  const musicList = await youtubeObj.json();
-
-  const newsObj = await fetch(
-    `https://script.google.com/macros/s/${env.NEWS_SHEET_KEY}/exec`
-  );
-  const newsData = await newsObj.json();
-
-  const artObj = await fetch(
-    `https://script.google.com/macros/s/${env.ART_SHEET_KEY}/exec`
-  );
-  const artList = await artObj.json();
+  const data = await Promise.all([
+    fetch(`https://script.google.com/macros/s/${env.MUSIC_SHEET_KEY}/exec`),
+    fetch(`https://script.google.com/macros/s/${env.NEWS_SHEET_KEY}/exec`),
+    fetch(`https://script.google.com/macros/s/${env.ART_SHEET_KEY}/exec`),
+  ]);
+  const musicList = await data[0].json();
+  const newsData = await data[1].json();
+  const artList = await data[2].json();
 
   return {
     props: {
@@ -515,12 +509,9 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
                     <ProfileImageWrapper>
                       <Lazy triggerOnce rootMargin="100px 0px">
                         <Image
-                          cloudName="kurooooon"
-                          publicId="matsuwo/profile_wkgtbv"
-                          width="100%"
-                          height="100%"
-                          alt=""
-                          secure={true}
+                          src="https://res.cloudinary.com/kurooooon/image/upload/v1579369005/matsuwo/profile_wkgtbv.jpg"
+                          width="800"
+                          height="800"
                         />
                       </Lazy>
                     </ProfileImageWrapper>
