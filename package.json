@@ -40,7 +40,7 @@
     "sanitize.css": "^11.0.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "10.2.2",
+    "@next/bundle-analyzer": "10.2.3",
     "@types/loadable__component": "5.13.3",
     "@types/react": "17.0.6",
     "@types/react-ga": "2.3.0",
