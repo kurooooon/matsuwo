@@ -31,8 +31,8 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^10.0.0",
     "nextjs-sitemap-generator": "^0.5.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-ga": "^2.7.0",
     "react-icons": "^4.0.0",
     "react-intersection-observer": "^8.25.2",
@@ -55,7 +55,7 @@
     "jest": "27.0.6",
     "jest-svg-transformer": "1.0.0",
     "prettier": "2.3.2",
-    "react-test-renderer": "16.14.0",
+    "react-test-renderer": "17.0.2",
     "typescript": "4.3.5"
   }
 }
