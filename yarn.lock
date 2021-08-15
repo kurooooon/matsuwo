@@ -4697,10 +4697,10 @@ next@^10.0.0:
   optionalDependencies:
     sharp "0.26.3"
 
-nextjs-sitemap-generator@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/nextjs-sitemap-generator/-/nextjs-sitemap-generator-0.5.0.tgz#0a5b847b2354f4df8967bfedb0a41b9cc6233e0e"
-  integrity sha512-mURzAVQTA1nQfFyQl+r2To2/paH0CLPkFO2gedRgZv7oaty6Dw66WVlb3yFP4KiwSyczzeotecdm+sWA2Ejbmw==
+nextjs-sitemap-generator@^1.0.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/nextjs-sitemap-generator/-/nextjs-sitemap-generator-1.3.0.tgz#288647ef7ad75ae379ed854b91bfcea9555606b3"
+  integrity sha512-6Omm9Th7aqUgPuBazyI6x8y78BFtNMkDRRDUanw4U+7jHWKSCpGSZScESAJPkiRICwh591H5hw9LO8/XSG0F5w==
   dependencies:
     date-fns "^2.9.0"
 
