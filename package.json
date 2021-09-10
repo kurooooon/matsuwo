@@ -54,7 +54,7 @@
     "eslint-plugin-react": "7.25.1",
     "jest": "27.1.1",
     "jest-svg-transformer": "1.0.0",
-    "prettier": "2.3.2",
+    "prettier": "2.4.0",
     "react-test-renderer": "16.14.0",
     "typescript": "4.4.2"
   }
