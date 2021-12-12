@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 export const SectionCss = css`
   padding: 6rem 0 4rem 0;
