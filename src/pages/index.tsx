@@ -228,7 +228,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
   return (
     <>
       <Head>
-        <title>matsuwo / 松尾竜平 officail site | music &amp; art artist</title>
+        <title>matu officail site | music &amp; art artist</title>
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
@@ -237,7 +237,7 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
       </Head>
       <main>
         <Header>
-          <HeadTitle>matsuwo</HeadTitle>
+          <HeadTitle>matu</HeadTitle>
         </Header>
 
         <NewSection>

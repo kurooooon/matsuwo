@@ -1,5 +1,5 @@
 {
-  "name": "matsuwo",
+  "name": "matu",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kurooooon/matsuwo.git"
+    "url": "git+https://github.com/kurooooon/matu.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kurooooon/matsuwo/issues"
+    "url": "https://github.com/kurooooon/matu/issues"
   },
-  "homepage": "https://github.com/kurooooon/matsuwo#readme",
+  "homepage": "https://github.com/kurooooon/matu#readme",
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",

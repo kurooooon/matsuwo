@@ -175,7 +175,7 @@ const About = () => (
             </ProfileImageWrapper>
           </Col>
           <AboutDescription>
-            <p>matsuwo / 松尾竜平</p>
+            <p>matu</p>
             <p>
               北海道札幌での
               <a

@@ -231,13 +231,13 @@ const Footer = function Presenter() {
         <SocialIcon
           id="mail"
           link="mailto:matsuwo611@gmail.com"
-          label="mail to matsuwo"
+          label="mail to matu"
         >
           <FiMail />
         </SocialIcon>
       </FooterList>
       <CopyRight>
-        <li>&copy; matsuwo / 松尾竜平</li>
+        <li>&copy; matu</li>
         <li>
           Design: <a href="https://html5up.net/">HTML5 UP</a>
         </li>

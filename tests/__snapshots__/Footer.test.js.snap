@@ -140,14 +140,14 @@ exports[`<Footer> snapshot testing 1`] = `
     </li>
     <li>
       <a
-        aria-label="mail to matsuwo"
+        aria-label="mail to matu"
         className="css-wk1r6r"
         href="mailto:matsuwo611@gmail.com"
         onClick={[Function]}
         target="_blank"
       >
         <svg
-          alt="mail to matsuwo"
+          alt="mail to matu"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -177,7 +177,7 @@ exports[`<Footer> snapshot testing 1`] = `
     className="css-zmi65u"
   >
     <li>
-      © matsuwo / 松尾竜平
+      © matu
     </li>
     <li>
       Design: 

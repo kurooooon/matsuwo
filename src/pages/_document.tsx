@@ -16,16 +16,16 @@ class MyDocument extends Document {
           {/* {<!-- End Google Tag Manager -->} */}
           <meta
             name="description"
-            content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。"
+            content="matu | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わず活動を行っている。"
           />
           <meta
             name="keywords"
-            content="matsuwo,松尾竜平,matu,音楽,アート,油絵,アコースティック,ギター,個展"
+            content="matu,松尾竜平,音楽,アート,油絵,アコースティック,ギター,個展,tiktok"
           />
           <link rel="canonical" href="https://matsuwo.netlify.app" />
           <meta
             property="og:title"
-            content="matsuwo / 松尾竜平 officail site | music &amp; art artist"
+            content="matu officail site | music &amp; art artist"
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://matsuwo.netlify.app" />
@@ -35,11 +35,11 @@ class MyDocument extends Document {
           />
           <meta
             property="og:site_name"
-            content="matsuwo / 松尾竜平 officail site | music &amp; art artist"
+            content="matu officail site | music &amp; art artist"
           />
           <meta
             property="og:description"
-            content="matsuwo / 松尾竜平 | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。"
+            content="matu | 東京、北海道を拠点に音楽、アート作品を発信するアーティスト。人を惹きつける唯一無二の歌声を武器に精力的に路上やライブハウス、ウェブ上での配信など場所を問わずライブ活動を行っている。"
           />
           <meta name="twitter:card" content="summary" />
           <meta charSet="utf-8" />

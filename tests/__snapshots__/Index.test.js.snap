@@ -8,7 +8,7 @@ exports[`<Index> snapshot testing 1`] = `
     <h1
       className="css-wu315a"
     >
-      matsuwo
+      matu
     </h1>
   </section>
   <section
@@ -96,7 +96,7 @@ exports[`<Index> snapshot testing 1`] = `
             className="css-1qp2ph2"
           >
             <p>
-              matsuwo / 松尾竜平
+              matu
             </p>
             <p>
               北海道札幌での
@@ -265,14 +265,14 @@ exports[`<Index> snapshot testing 1`] = `
       </li>
       <li>
         <a
-          aria-label="mail to matsuwo"
+          aria-label="mail to matu"
           className="css-wk1r6r"
           href="mailto:matsuwo611@gmail.com"
           onClick={[Function]}
           target="_blank"
         >
           <svg
-            alt="mail to matsuwo"
+            alt="mail to matu"
             fill="none"
             height="1em"
             stroke="currentColor"
@@ -302,7 +302,7 @@ exports[`<Index> snapshot testing 1`] = `
       className="css-zmi65u"
     >
       <li>
-        © matsuwo / 松尾竜平
+        © matu
       </li>
       <li>
         Design: 
