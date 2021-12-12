@@ -66,32 +66,6 @@ const HeadTitle = styled.h1`
   }
 `;
 
-const YoutubeWrapper = styled.div`
-  display: grid;
-  width: 100%;
-  grid-gap: 8px;
-  grid-template-columns: 1fr;
-
-  @media screen and (min-width: 480px) {
-    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-  }
-`;
-
-const ArtWrapper = styled.div`
-  display: grid;
-  width: 100%;
-  grid-gap: 8px;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 736px) {
-    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-  }
-
-  @media (min-width: 1140px) {
-    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  }
-`;
-
 const NewsWrapper = styled.ul`
   margin: 0;
   padding-left: 1rem;
@@ -198,32 +172,6 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
     });
     return <NewsWrapper>{items}</NewsWrapper>;
   }, [news]);
-
-  const renderedYouTube = useMemo(() => {
-    if (!musicList) {
-      return null;
-    }
-    return (
-      <YoutubeWrapper>
-        {musicList.map(({ id, title }) => (
-          <YoutubeItem key={id} id={id} title={title} />
-        ))}
-      </YoutubeWrapper>
-    );
-  }, [musicList]);
-
-  const renderedArt = useMemo(() => {
-    if (!artList) {
-      return null;
-    }
-    return (
-      <ArtWrapper>
-        {artList.map(({ id, title, url }) => (
-          <ArtItem key={id} id={id} title={title} url={url} />
-        ))}
-      </ArtWrapper>
-    );
-  }, [artList]);
 
   return (
     <>
