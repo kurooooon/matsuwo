@@ -26,9 +26,7 @@ const YoutubeItem = ({ id, title }: Props) => {
   }, [id, title]);
   return (
     <div>
-      <Lazy triggerOnce rootMargin="100px 0px">
-        <YouTube opts={{ width: '100%' }} videoId={id} onPlay={onPlay} />
-      </Lazy>
+      <YouTube opts={{ width: '100%' }} videoId={id} onPlay={onPlay} />
       <Title>{title}</Title>
     </div>
   );

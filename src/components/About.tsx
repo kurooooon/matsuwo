@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { SectionHeader } from './SectionHeader';
 import { Row } from './Row';
@@ -6,6 +5,8 @@ import { Col } from './Col';
 import Lazy from './Lazy';
 import { SectionCss } from './Section';
 import { Image } from 'cloudinary-react';
+import { Content } from './Content';
+import { css } from '@emotion/react';
 
 const AboutWrapper = styled.section`
   ${SectionCss}
@@ -121,19 +122,6 @@ const AboutWrapper = styled.section`
   }
 `;
 
-const AboutContainer = styled.div`
-  @media (min-width: 1140px) {
-    margin: 0 auto;
-    max-width: calc(100% - 4em);
-    width: 60em;
-  }
-`;
-
-const AboutInnerWrapper = styled.div`
-  background-color: #00000099;
-  padding: 20px;
-`;
-
 const AboutDescription = styled.div`
   font-size: 1rem;
 
@@ -154,28 +142,39 @@ const ProfileImageWrapper = styled.div`
 
 const About = () => (
   <AboutWrapper>
-    <AboutContainer>
-      <AboutInnerWrapper>
+    <Content>
+      <div
+        css={css`
+          background-color: #00000099;
+          padding: 0 2rem;
+        `}
+      >
         <SectionHeader inverse>
           <h2>About</h2>
         </SectionHeader>
         <Row>
           <Col>
             <ProfileImageWrapper>
-              <Lazy triggerOnce rootMargin="100px 0px">
-                <Image
-                  cloudName="kurooooon"
-                  publicId="matsuwo/profile_wkgtbv"
+              <Lazy
+                css={css`
+                  aspect-ratio: 1/1;
+                `}
+                triggerOnce
+                rootMargin="100px 0px"
+              >
+                <img
                   width="100%"
                   height="100%"
-                  alt=""
-                  secure={true}
+                  alt="matu"
+                  src="images/profile.jpg"
                 />
               </Lazy>
             </ProfileImageWrapper>
           </Col>
           <AboutDescription>
-            <p>matu</p>
+            <p>
+              <b>matu</b>
+            </p>
             <p>
               北海道札幌での
               <a
@@ -209,8 +208,8 @@ const About = () => (
             </p>
           </AboutDescription>
         </Row>
-      </AboutInnerWrapper>
-    </AboutContainer>
+      </div>
+    </Content>
   </AboutWrapper>
 );
 

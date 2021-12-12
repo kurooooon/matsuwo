@@ -9,12 +9,6 @@ import YoutubeItem from './YoutubeItem';
 
 const WorksSection = styled.section`
   ${SectionCss};
-
-  @media (min-width: 1140px) {
-    max-width: calc(100% - 4em);
-    margin: auto;
-    width: 60em;
-  }
 `;
 
 const WorkLink = styled.a`

@@ -9,4 +9,9 @@
 		<loc>https://matsuwo.netlify.app/index</loc>
 		<lastmod>2021-12-12</lastmod>
 	</url>
+
+	<url>
+		<loc>https://matsuwo.netlify.app/info/[id]</loc>
+		<lastmod>2021-12-12</lastmod>
+	</url>
 </urlset>

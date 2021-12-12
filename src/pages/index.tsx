@@ -9,6 +9,7 @@ import Lazy from '../components/Lazy';
 import { About, Footer, Work } from '../components/modules';
 import { SectionHeader } from '../components/SectionHeader';
 import { Music, Art, News } from '../@types/type';
+import { Content } from '../components/Content';
 
 const SectionCss = css`
   padding: 6rem 0 4rem 0;
@@ -89,14 +90,6 @@ const NewsItem = styled.li`
 
 const NewSection = styled.section`
   ${SectionCss};
-`;
-
-const NewContainer = styled.section`
-  @media (min-width: 1140px) {
-    margin: 0 auto;
-    max-width: calc(100% - 4em);
-    width: 60em;
-  }
 `;
 
 export const getStaticProps = async () => {
@@ -186,18 +179,18 @@ const IndexPage = ({ news, musicList, artList }: Props) => {
           <HeadTitle>matu</HeadTitle>
         </Header>
 
-        <NewSection>
-          <NewContainer>
+        <Content>
+          <NewSection>
             <SectionHeader>
               <h2>What's New</h2>
             </SectionHeader>
             {renderedNews}
-          </NewContainer>
-        </NewSection>
+          </NewSection>
 
-        <Lazy triggerOnce rootMargin="300px 0px">
-          <Work musicList={musicList} artList={artList} />
-        </Lazy>
+          <Lazy triggerOnce rootMargin="300px 0px">
+            <Work musicList={musicList} artList={artList} />
+          </Lazy>
+        </Content>
 
         <Lazy triggerOnce rootMargin="300px 0px">
           <About />
